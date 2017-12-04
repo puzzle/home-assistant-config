@@ -1,0 +1,13 @@
+- platform: rocketchat
+  name: rocketchat
+  url: !secret rocketchat_url
+  username:  !secret rocketchat_username
+  password:  !secret rocketchat_password
+  room:  !secret rocketchat_room
+- platform: twitter
+  name: twitter
+  consumer_key: !secret twitter_consumer_key
+  consumer_secret: !secret twitter_consumer_secret
+  access_token: !secret twitter_access_token
+  access_token_secret: !secret twitter_access_token_secret
+

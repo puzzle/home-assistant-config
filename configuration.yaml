@@ -1,0 +1,44 @@
+homeassistant:
+  name: Puzzle Assistant
+  latitude: !secret ha_latitude
+  longitude: !secret ha_longitude
+  elevation: !secret ha_elevation
+  unit_system: !secret ha_unit_system
+  time_zone: !secret ha_time_zone
+  customize: !include customize.yaml
+
+frontend:
+  themes:
+    puzzle:
+      primary-color: "#1E5A96"
+      primary-background-color: "#FFFFFF"
+      secondary-background-color: "#FFFFFF"
+
+http:
+  api_password: !secret http_password
+  server_port: !secret http_server_port
+  base_url: !secret http_base_url
+
+updater:
+  reporting: false
+  include_used_components: false
+
+history:
+
+logbook:
+
+sun:
+
+notify: !include notifiers.yaml
+
+tradfri:
+  host: !secret tradfri_host
+
+camera: !include cameras.yaml
+sensor: !include sensors.yaml
+switch: !include switches.yaml
+
+group: !include groups.yaml
+scene: !include scenes.yaml
+automation: !include automations.yaml
+

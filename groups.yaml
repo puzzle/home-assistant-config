@@ -1,0 +1,42 @@
+  default_view:                                                                                                                                        
+    name: Puzzle Assistant
+    view: yes                                                                                                                                          
+    icon: mdi:puzzle
+    entities:
+    - sensor.aare
+    - sensor.tradfri_motion_sensor
+    - sensor.travis_puzzlehomeassistantconfig_state
+    - sun.sun
+    - updater.updater
+    - group.bar_lights_control
+    - group.traffic_cameras
+  settings:
+    name: Settings
+    view: yes
+    icon: mdi:settings
+    entities:
+    - group.all_lights
+  bar_lights_control:
+    name: Bar Lights
+    control: hidden
+    entities:
+    - scene.bar_everyday
+    - scene.bar_focus
+    - scene.bar_relax
+    - automation.bar_daylight
+    - automation.bar_nightlight
+  traffic_cameras:
+    name: Traffic Cameras
+    entities:
+    - camera.wankdorf_a6_richtung_lausanne
+    - camera.wankdorf_a6_richtung_thun
+    - camera.wankdorf_a1_richtung_zurich
+  bar_lights:
+    name: Bar Lights
+    entities:
+    - light.tradfri_bulb_e27_ws_opal_980lm
+    - light.tradfri_bulb_e27_ws_opal_980lm_2
+    - light.tradfri_bulb_e27_ws_opal_980lm_3
+    - light.tradfri_bulb_e27_ws_opal_980lm_4
+    - light.tradfri_bulb_e27_ws_opal_980lm_5
+

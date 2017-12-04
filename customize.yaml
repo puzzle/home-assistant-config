@@ -1,0 +1,22 @@
+    group.all_lights:
+      friendly_name: 'Lights'
+      hidden: false
+
+    light.bar:
+      hidden: true
+
+    automation.bar_daylight:
+      icon: mdi:weather-sunny
+    automation.bar_nightlight:
+      icon: mdi:weather-night
+
+    scene.bar_everyday:
+      friendly_name: 'Everyday'
+      icon: mdi:brightness-7
+    scene.bar_focus:
+      friendly_name: 'Focus'
+      icon: mdi:brightness-5
+    scene.bar_relax:
+      friendly_name: 'Relax'
+      icon: mdi:brightness-4
+

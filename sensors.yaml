@@ -1,0 +1,12 @@
+- platform: travisci
+  api_key: !secret travis_api_key
+  repository:
+  - home-assistant-config
+  entity_namespace: travis
+- platform: rest
+  name: Aare
+  resource: http://aare.schwumm.ch/aare.json
+  unit_of_measurement: "°C"
+  value_template: '{{ value_json.temperature }}'
+  scan_interval: 3600
+
