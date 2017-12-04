@@ -1,3 +1,6 @@
+    sensor.travis_puzzlehomeassistantconfig_state:
+      friendly_name: 'Travis Build'
+
     group.all_lights:
       friendly_name: 'Lights'
       hidden: false
