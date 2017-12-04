@@ -1,7 +1,7 @@
 - platform: travisci
   api_key: !secret travis_api_key
   repository:
-  - home-assistant-config
+  - puzzle/home-assistant-config
   entity_namespace: travis
 - platform: rest
   name: Aare
