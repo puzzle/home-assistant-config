@@ -8,10 +8,9 @@
     light.bar:
       hidden: true
 
-    automation.bar_daylight:
-      icon: mdi:weather-sunny
-    automation.bar_nightlight:
-      icon: mdi:weather-night
+    switch.bar_automatic_lighting:                  
+      friendly_name: 'Automatic Bar Lighting'       
+      icon: mdi:ceiling-light
 
     scene.bar_everyday:
       friendly_name: 'Everyday'
