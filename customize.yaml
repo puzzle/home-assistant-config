@@ -9,16 +9,16 @@
       hidden: true
 
     switch.bar_automatic_lighting:                  
-      friendly_name: 'Automatic Bar Lighting'       
+      friendly_name: 'Automatic Lighting'
       icon: mdi:ceiling-light
 
     scene.bar_everyday:
       friendly_name: 'Everyday'
-      icon: mdi:brightness-7
+      icon: mdi:brightness-1
     scene.bar_focus:
       friendly_name: 'Focus'
       icon: mdi:brightness-5
     scene.bar_relax:
       friendly_name: 'Relax'
-      icon: mdi:brightness-4
+      icon: mdi:brightness-2
 
