@@ -9,7 +9,6 @@
     - sun.sun
     - updater.updater
     - group.bar_lights_control
-    - group.traffic_cameras
   settings:
     name: Settings
     view: yes
