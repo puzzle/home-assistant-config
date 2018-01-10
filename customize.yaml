@@ -8,7 +8,7 @@
     light.bar:
       hidden: true
 
-    switch.bar_automatic_lighting:                  
+    automation.automatic_bar_lighting:                  
       friendly_name: 'Automatic Lighting'
       icon: mdi:ceiling-light
 
@@ -21,4 +21,13 @@
     scene.bar_relax:
       friendly_name: 'Relax'
       icon: mdi:brightness-2
+
+    automation.low_battery_alert:
+      icon: mdi:battery-20
+    automation.startup_notification:
+      icon: mdi:arrow-up-bold
+    automation.shutdown_notification:
+      icon: mdi:arrow-down-bold
+    automation.update_notification:
+      icon: mdi:update
 
