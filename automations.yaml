@@ -2,7 +2,6 @@
   trigger:
   - platform: state
     entity_id: light.tradfri_bulb_e27_ws_opal_980lm
-    from: 'off'
     to: 'on'
   - platform: time
     minutes: '/1'
