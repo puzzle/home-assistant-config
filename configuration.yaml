@@ -26,6 +26,9 @@ updater:
 history:
 
 logbook:
+  exclude:
+    entities:
+    - automation.automatic_bar_lighting
 
 sun:
 
