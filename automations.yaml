@@ -15,11 +15,9 @@
     entity_id: automation.automatic_bar_lighting
     to: 'off'
   action:
-  - service: automation.turn_on
-    entity_id: automation.automatic_bar_lighting
   - service: notify.rocketchat_status
     data:
-      message: ':bulb: Someone tried to disable the automatic bar lighting'
+      message: ':bulb: Someone disabled the automatic bar lighting'
   - service: persistent_notification.create
     data:
       title: 'Please tell Benj'
