@@ -7,8 +7,8 @@
       - light.tradfri_bulb_e27_ws_opal_980lm_5
     name: Bar Automatic Lighting
     start_time: '06:00'
-    start_colortemp: 3500
-    sunset_colortemp: 2500
+    start_colortemp: 3200
+    sunset_colortemp: 2200
     mode: mired
     transition: 1
     interval: 1
