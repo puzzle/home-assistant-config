@@ -17,11 +17,11 @@
   action:
   - service: notify.rocketchat_status
     data:
-      message: ':bulb: Someone disabled the automatic bar lighting'
+      message: ":bulb: Someone disabled the automatic bar lighting"
   - service: persistent_notification.create
     data:
-      title: 'Please tell Benj'
-      message: 'Benj would really like to know why you would like to disable the automatic lighting so he can optimize it and everyone is happy :)  Or contribute a fix yourself, code is on GitHub (puzzle/home-assistant-config)'
+      title: "Please tell Benj"
+      message: "Benj would really like to know why you would like to disable the automatic lighting so he can optimize it and everyone is happy :)  Or contribute a fix yourself, code is on GitHub (puzzle/home-assistant-config)"
       notification_id: 222
   - delay:
       minutes: 1
@@ -38,7 +38,7 @@
   action:
   - service: notify.rocketchat_status
     data_template:
-      message: ':battery: {{ trigger.to_state.name }} is less than 20% battery'
+      message: ":battery: {{ trigger.to_state.name }} is less than 20% battery"
 
 - alias: Update Notification
   trigger:
@@ -47,7 +47,7 @@
   action:
   - service: notify.rocketchat_status
     data:
-      message: ':hass: There is a new Home Assistant release available - <{{ states.updater.updater.attributes.release_notes }}>'
+      message: ":hass: There is a new Home Assistant release available ({{ states.updater.updater.attributes.release_notes }})"
 
 - alias: Startup Notification
   trigger:
@@ -56,7 +56,7 @@
   action:
   - service: notify.rocketchat_status
     data:
-      message: ':hass: Home Assistant is up and running'
+      message: ":hass: Home Assistant is up and running"
 
 - alias: Shutdown Notification
   trigger:
@@ -65,5 +65,5 @@
   action:
   - service: notify.rocketchat_status
     data:
-      message: ':hass: Home Assistant is stopped'
+      message: ":hass: Home Assistant is stopped"
 
