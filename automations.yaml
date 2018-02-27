@@ -47,7 +47,7 @@
   action:
   - service: notify.rocketchat_status
     data:
-      message: ":hass: There is a new Home Assistant release available ({{ states.updater.updater.attributes.release_notes }})"
+      message: "Home Assistant {{ trigger.to_state.state }} is available."
 
 - alias: Startup Notification
   trigger:
