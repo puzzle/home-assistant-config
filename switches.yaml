@@ -1,10 +1,10 @@
   - platform: flux
     lights:
-      - light.tradfri_bulb_e27_ws_opal_980lm
-      - light.tradfri_bulb_e27_ws_opal_980lm_2
-      - light.tradfri_bulb_e27_ws_opal_980lm_3
-      - light.tradfri_bulb_e27_ws_opal_980lm_4
-      - light.tradfri_bulb_e27_ws_opal_980lm_5
+    - light.bar_bulb_1
+    - light.bar_bulb_2
+    - light.bar_bulb_3
+    - light.bar_bulb_4
+    - light.bar_bulb_5
     name: Bar Automatic Lighting
     start_time: '06:00'
     start_colortemp: 3200

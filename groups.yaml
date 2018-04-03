@@ -4,7 +4,7 @@
     icon: mdi:puzzle
     entities:
     - sensor.aare
-    - sensor.tradfri_motion_sensor
+    - sensor.bar_motion_sensor
     - sensor.travis_puzzlehomeassistantconfig_state
     - sun.sun
     - updater.updater
@@ -33,11 +33,11 @@
   bar_lights:
     name: Bar Lights
     entities:
-    - light.tradfri_bulb_e27_ws_opal_980lm
-    - light.tradfri_bulb_e27_ws_opal_980lm_2
-    - light.tradfri_bulb_e27_ws_opal_980lm_3
-    - light.tradfri_bulb_e27_ws_opal_980lm_4
-    - light.tradfri_bulb_e27_ws_opal_980lm_5
+    - light.bar_bulb_1
+    - light.bar_bulb_2
+    - light.bar_bulb_3
+    - light.bar_bulb_4
+    - light.bar_bulb_5
   automation_control:
     name: Automations
     entities:
