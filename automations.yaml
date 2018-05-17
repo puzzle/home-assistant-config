@@ -9,26 +9,6 @@
   action:
   - service: switch.bar_automatic_lighting_update
 
-- alias: Automatic Bar Lighting Notification
-  trigger:
-  - platform: state
-    entity_id: automation.automatic_bar_lighting
-    to: 'off'
-  action:
-  - service: notify.rocketchat_status
-    data:
-      message: ":bulb: Someone disabled the automatic bar lighting"
-  - service: persistent_notification.create
-    data:
-      title: "Please tell Benj"
-      message: "Benj would really like to know why you would like to disable the automatic lighting so he can optimize it and everyone is happy :)  Or contribute a fix yourself, code is on GitHub (puzzle/home-assistant-config)"
-      notification_id: 222
-  - delay:
-      minutes: 1
-  - service: persistent_notification.dismiss
-    data:
-      notification_id: 222
-
 - alias: Low Battery Alert
   trigger:
     platform: numeric_state
