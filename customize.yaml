@@ -8,6 +8,30 @@
     light.bar:
       hidden: true
 
+    light.sonoff1645:
+      friendly_name: 'Floor Lamp 1'
+      icon: mdi:floor-lamp
+    light.sonoff1905:
+      friendly_name: 'Floor Lamp 1'
+      icon: mdi:floor-lamp
+    light.sonoff1911:
+      friendly_name: 'Floor Lamp 1'
+      icon: mdi:floor-lamp
+    light.sonoff4126:
+      friendly_name: 'Floor Lamp 2'
+      icon: mdi:floor-lamp
+    light.sonoff7461:
+      friendly_name: 'Floor Lamp 1'
+      icon: mdi:floor-lamp
+
+    sensor.sonoff1688:
+      friendly_name: 'Projector Energy Consumption'
+      icon: mdi:projector
+
+    switch.sonoff1688:
+      friendly_name: 'Projector'
+      icon: mdi:projector
+
     automation.automatic_bar_lighting:                  
       friendly_name: 'Automatic Lighting'
       icon: mdi:ceiling-light
