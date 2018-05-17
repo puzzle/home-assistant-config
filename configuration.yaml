@@ -41,7 +41,6 @@ light: !include lights.yaml
 tradfri:
   host: !secret tradfri_host
 
-camera: !include cameras.yaml
 sensor: !include sensors.yaml
 switch: !include switches.yaml
 
