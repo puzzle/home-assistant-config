@@ -9,6 +9,10 @@
     - sun.sun
     - updater.updater
     - group.bar_lights_control
+    - group.backoffice_lights
+    - group.devtre_lights
+    - group.sys_lights
+    - group.tux_lights
   settings:
     name: Settings
     view: yes
@@ -32,6 +36,23 @@
     - light.bar_bulb_3
     - light.bar_bulb_4
     - light.bar_bulb_5
+  backoffice_lights:
+    name: Backoffice Lights
+    entities:
+    - light.sonoff1905
+  devtre_lights:
+    name: '/dev/tre Lights'
+    entities:
+    - light.sonoff1645
+  sys_lights:
+    name: '/sys & /mid Lights'
+    entities:
+    - light.sonoff1911
+  tux_lights:
+    name: Tux Lights
+    entities:
+    - light.sonoff7461
+    - light.sonoff4126
   automation_control:
     name: Automations
     entities:
