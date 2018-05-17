@@ -36,6 +36,8 @@ notify: !include notifiers.yaml
 
 mqtt:
 
+light: !include lights.yaml
+
 tradfri:
   host: !secret tradfri_host
 
