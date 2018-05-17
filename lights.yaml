@@ -26,15 +26,6 @@
   payload_not_available: "Offline"
   retain: true
 - platform: mqtt
-  name: sonoff-1688
-  state_topic: "be3/tux/projector/stat/POWER"
-  command_topic: "be3/tux/projector/cmnd/POWER"
-  availability_topic: "be3/tux/projector/tele/LWT"
-  qos: 1
-  payload_available: "Online"
-  payload_not_available: "Offline"
-  retain: true
-- platform: mqtt
   name: sonoff-1911
   state_topic: "be3/sys/lamp01/stat/POWER"
   command_topic: "be3/sys/lamp01/cmnd/POWER"
