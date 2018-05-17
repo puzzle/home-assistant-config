@@ -1,15 +1,15 @@
-  - platform: flux
-    lights:
-    - light.bar_bulb_1
-    - light.bar_bulb_2
-    - light.bar_bulb_3
-    - light.bar_bulb_4
-    - light.bar_bulb_5
-    name: Bar Automatic Lighting
-    start_time: '06:00'
-    start_colortemp: 3200
-    sunset_colortemp: 2200
-    mode: mired
-    transition: 1
-    interval: 1
+- platform: flux
+  lights:
+  - light.bar_bulb_1
+  - light.bar_bulb_2
+  - light.bar_bulb_3
+  - light.bar_bulb_4
+  - light.bar_bulb_5
+  name: Bar Automatic Lighting
+  start_time: '06:00'
+  start_colortemp: 3800
+  sunset_colortemp: 2300
+  mode: mired
+  transition: 1
+  interval: 1
 
