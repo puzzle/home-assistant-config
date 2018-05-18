@@ -41,6 +41,10 @@ light: !include lights.yaml
 tradfri:
   host: !secret tradfri_host
 
+google:
+  client_id: !secret google_client_id
+  client_secret: !secret google_client_secret
+
 sensor: !include sensors.yaml
 switch: !include switches.yaml
 
