@@ -3,7 +3,6 @@
     view: yes                                                                                                                                          
     icon: mdi:puzzle
     entities:
-    - sensor.aare
     - sensor.bar_motion_sensor
     - sensor.travis_puzzlehomeassistantconfig_state
     - sun.sun
