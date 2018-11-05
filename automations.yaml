@@ -38,3 +38,35 @@
     data:
       message: ":hass: Home Assistant is stopped"
 
+- alias: Office Lights On
+  trigger:
+  - platform: time
+    at: '7:30:00'
+  condition:
+    condition: state
+    entity_id: 'binary_sensor.workday_sensor_be'
+    state: 'on'
+  action:
+    service: light.turn_on
+    data:
+      entity_id:
+      - light.sonoff1645
+      - light.sonoff1905
+      - light.sonoff1911
+
+- alias: Office Lights Off
+  trigger:
+  - platform: time
+    at: '20:00:00'
+  condition:
+    condition: state
+    entity_id: 'binary_sensor.workday_sensor_be'
+    state: 'on'
+  action:
+    service: light.turn_off
+    data:
+      entity_id:
+      - light.sonoff1645
+      - light.sonoff1905
+      - light.sonoff1911
+
