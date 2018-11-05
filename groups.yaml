@@ -5,8 +5,6 @@
     entities:
     - sensor.bar_motion_sensor
     - sensor.travis_puzzlehomeassistantconfig_state
-    - sun.sun
-    - updater.updater
     - group.bar
     - group.backoffice
     - group.devtre
