@@ -15,7 +15,6 @@ frontend:
       secondary-background-color: "#FFFFFF"
 
 http:
-  api_password: !secret http_password
   server_port: !secret http_server_port
   base_url: !secret http_base_url
 
