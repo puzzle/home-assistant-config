@@ -34,7 +34,7 @@ sun:
 notify: !include notifiers.yaml
 
 mqtt:
-  password: !secret mqtt_password
+  broker: !secret mqtt_host
 
 light: !include lights.yaml
 
