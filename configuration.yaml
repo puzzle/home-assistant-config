@@ -49,6 +49,7 @@ binary_sensor: !include binary_sensors.yaml
 sensor: !include sensors.yaml
 switch: !include switches.yaml
 
+input_boolean: !include input_booleans.yaml
 group: !include groups.yaml
 scene: !include scenes.yaml
 automation: !include automations.yaml

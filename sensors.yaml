@@ -4,7 +4,7 @@
   - puzzle/home-assistant-config
   entity_namespace: travis
 - platform: mqtt
-  name: sonoff-1688
+  name: sonoff1688
   state_topic: "be3/tux/projector/tele/SENSOR"
   value_template: '{{ value_json["ENERGY"]["Power"] }}'
   unit_of_measurement: "W"

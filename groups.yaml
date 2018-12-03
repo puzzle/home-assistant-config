@@ -27,18 +27,25 @@
     - light.bar
   backoffice:
     name: Backoffice
+    control: hidden
     entities:
     - light.sonoff1905
+    - input_boolean.sonoff1905_timebased_lighting
   devtre:
     name: '/dev/tre'
+    control: hidden
     entities:
     - light.sonoff1645
+    - input_boolean.sonoff1645_timebased_lighting
   sys:
     name: '/sys & /mid'
+    control: hidden
     entities:
     - light.sonoff1911
+    - input_boolean.sonoff1911_timebased_lighting
   tux:
     name: TUX
+    control: hidden
     entities:
     - light.sonoff7461
     - light.sonoff4126

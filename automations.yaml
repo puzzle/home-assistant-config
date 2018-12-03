@@ -11,7 +11,7 @@
 
 - alias: Low Battery Alert
   trigger:
-    platform: numeric_state
+  - platform: numeric_state
     entity_id:
     - sensor.tradfri_motion_sensor
     below: 20
@@ -41,9 +41,9 @@
 - alias: Office Lights On
   trigger:
   - platform: time
-    at: '7:30:00'
+    at: '7:00:00'
   condition:
-    condition: state
+  - condition: state
     entity_id: 'binary_sensor.workday_sensor_be'
     state: 'on'
   action:
