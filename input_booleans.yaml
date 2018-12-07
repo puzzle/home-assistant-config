@@ -1,10 +1,10 @@
-- sonoff1645_timebased_lighting:
+  sonoff1645_timebased_lighting:
     name: Time-Based Lighting
     icon: mdi:clock-outline
-- sonoff1905_timebased_lighting:
+  sonoff1905_timebased_lighting:
     name: Time-Based Lighting
     icon: mdi:clock-outline
-- sonoff1911_timebased_lighting:
+  sonoff1911_timebased_lighting:
     name: Time-Based Lighting
     icon: mdi:clock-outline
 
