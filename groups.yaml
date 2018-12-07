@@ -44,7 +44,7 @@
     entities:
     - light.sonoff1911
     - input_boolean.sonoff1911_timebased_lighting
-    - switch.sys-TV-screen
+    - switch.sysTVscreen
   tux:
     name: TUX
     control: hidden
