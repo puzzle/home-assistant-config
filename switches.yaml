@@ -21,4 +21,9 @@
   payload_available: "Online"
   payload_not_available: "Offline"
   retain: true
-
+- platform: mystrom
+  host: 10.14.1.6
+  name: sys-TV-screen
+- platform: mystrom
+  host: 10.14.1.7
+  name: kafiscreen
