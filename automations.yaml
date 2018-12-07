@@ -53,6 +53,8 @@
       - light.sonoff1645
       - light.sonoff1905
       - light.sonoff1911
+      - switch.sysTVscreen
+      - switch.kafiscreen
 
 - alias: Office Lights Off
   trigger:
@@ -69,4 +71,5 @@
       - light.sonoff1645
       - light.sonoff1905
       - light.sonoff1911
-
+      - switch.sysTVscreen
+      - switch.kafiscreen

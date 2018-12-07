@@ -25,6 +25,7 @@
     - scene.bar_focus
     - scene.bar_relax
     - light.bar
+    - switch.kafiscreen
   backoffice:
     name: Backoffice
     control: hidden
@@ -43,6 +44,7 @@
     entities:
     - light.sonoff1911
     - input_boolean.sonoff1911_timebased_lighting
+    - switch.sysTVscreen
   tux:
     name: TUX
     control: hidden
