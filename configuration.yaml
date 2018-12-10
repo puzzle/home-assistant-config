@@ -54,3 +54,19 @@ group: !include groups.yaml
 scene: !include scenes.yaml
 automation: !include automations.yaml
 
+octoprint:
+  host: !secret octoprint_host 
+  api_key: !secret octoprint_api_key
+  bed: true
+  sensors:
+    monitored_conditions:
+      - 'Current State'
+      - 'Temperatures'
+      - 'Job Percentage'
+      - 'Time Elapsed'
+      - 'Time Remaining'
+  binary_sensors:
+    monitored_conditions:
+      - 'Printing'
+      - 'Printing Error'
+

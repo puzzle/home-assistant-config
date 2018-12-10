@@ -73,3 +73,24 @@
       - light.sonoff1911
       - switch.sysTVscreen
       - switch.kafiscreen
+
+- alias: Octoprint Start Printing Notification
+  trigger:
+  - platform: state
+    entity_id: binary_sensor.octoprint_printing
+    to: 'true'
+  action:
+    - service: notify.rocketchat_3ddruck
+      data_template:
+        message: "3D-Printer startet printing. Time remaining: {{ sensor.octoprint_time_remaining }}"
+
+- alias: Octoprint Stop Printing Notification
+  trigger:
+  - platform: state
+    entity_id: binary_sensor.octoprint_printing
+    to: 'false'
+  action:
+    - service: notify.rocketchat_3ddruck
+      data_template:
+        message: "3D-Printer stopped printing..."
+
