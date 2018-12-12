@@ -47,7 +47,7 @@
     entity_id: 'binary_sensor.workday_sensor_be'
     state: 'on'
   action:
-    service: light.turn_on
+  - service: light.turn_on
     data:
       entity_id:
       - light.sonoff1645
@@ -59,11 +59,11 @@
   - platform: time
     at: '20:00:00'
   condition:
-    condition: state
+  - condition: state
     entity_id: 'binary_sensor.workday_sensor_be'
     state: 'on'
   action:
-    service: light.turn_off
+  - service: light.turn_off
     data:
       entity_id:
       - light.sonoff1645
@@ -79,7 +79,7 @@
     entity_id: 'binary_sensor.workday_sensor_be'
     state: 'on'
   action:
-    service: switch.turn_on
+  - service: switch.turn_on
     data:
       entity_id:
       - switch.systvscreen
@@ -90,11 +90,11 @@
   - platform: time
     at: '18:00:00'
   condition:
-    condition: state
+  - condition: state
     entity_id: 'binary_sensor.workday_sensor_be'
     state: 'on'
   action:
-    service: switch.turn_off
+  - service: switch.turn_off
     data:
       entity_id:
       - switch.systvscreen
@@ -106,9 +106,9 @@
     entity_id: binary_sensor.octoprint_printing
     to: 'true'
   action:
-    - service: notify.rocketchat_3ddruck
-      data_template:
-        message: "3D-Printer startet printing. Time remaining: {{ sensor.octoprint_time_remaining }}"
+  - service: notify.rocketchat_3ddruck
+    data_template:
+      message: "3D-Printer started printing. Time remaining: {{ sensor.octoprint_time_remaining }}"
 
 - alias: Octoprint Stop Printing Notification
   trigger:
@@ -116,7 +116,7 @@
     entity_id: binary_sensor.octoprint_printing
     to: 'false'
   action:
-    - service: notify.rocketchat_3ddruck
-      data_template:
-        message: "3D-Printer stopped printing..."
+  - service: notify.rocketchat_3ddruck
+    data_template:
+      message: "3D-Printer stopped printing..."
 
