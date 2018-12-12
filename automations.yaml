@@ -53,7 +53,7 @@
       - light.sonoff1645
       - light.sonoff1905
       - light.sonoff1911
-      - switch.sysTVscreen
+      - switch.systvscreen
       - switch.kafiscreen
 
 - alias: Office Lights Off
@@ -71,7 +71,7 @@
       - light.sonoff1645
       - light.sonoff1905
       - light.sonoff1911
-      - switch.sysTVscreen
+      - switch.systvscreen
       - switch.kafiscreen
 
 - alias: Octoprint Start Printing Notification

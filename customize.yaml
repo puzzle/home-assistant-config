@@ -31,7 +31,7 @@
     switch.sonoff1688:
       friendly_name: 'Projector'
       icon: mdi:projector
-    switch.sysTVscreen:
+    switch.systvscreen:
       friendly_name: 'TV Screen'
       icon: mdi:television
     switch.kafiscreen:

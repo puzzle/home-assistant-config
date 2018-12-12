@@ -23,7 +23,7 @@
   retain: true
 - platform: mystrom
   host: 10.14.1.6
-  name: sysTVscreen
+  name: systvscreen
 - platform: mystrom
   host: 10.14.1.7
   name: kafiscreen
