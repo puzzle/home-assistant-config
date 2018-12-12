@@ -10,6 +10,12 @@
     - group.devtre
     - group.sys
     - group.tux
+  3dprinter:
+    name: 3D-Printer
+    view: yes
+    icon: mdi:printer-3d
+    entities:
+    - group.3dprintgroup
   settings:
     name: Settings
     view: yes
@@ -52,6 +58,17 @@
     - light.sonoff7461
     - light.sonoff4126
     - switch.sonoff1688
+  3dprintgroup:
+    name: 3D Printer
+    entities:
+    - binary_sensor.octoprint_printing
+    - binary_sensor.octoprint_printing_error
+    - sensor.octoprint_current_state
+    - sensor.octoprint_job_percentage
+    - sensor.octoprint_actual_bed_temp
+    - sensor.octoprint_target_bed_temp
+    - sensor.octoprint_time_elapsed
+    - sensor.octoprint_time_remaining
   automation_control:
     name: Automations
     entities:
@@ -59,3 +76,5 @@
     - automation.startup_notification
     - automation.shutdown_notification
     - automation.update_notification
+    - automation.octoprint_start_printing_notification
+    - automation.octoprint_stop_printing_notification

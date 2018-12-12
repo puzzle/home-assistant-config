@@ -10,6 +10,12 @@
   username: !secret rocketchat_username
   password: !secret rocketchat_password
   room: pass-fyrabe
+- platform: rocketchat
+  name: rocketchat_3ddruck
+  url: !secret rocketchat_url
+  username: !secret rocketchat_username
+  password: !secret rocketchat_password
+  room: 3d-druck
 - platform: twitter
   name: twitter
   consumer_key: !secret twitter_consumer_key
