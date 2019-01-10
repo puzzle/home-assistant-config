@@ -44,6 +44,11 @@
     entities:
     - light.sonoff1645
     - input_boolean.sonoff1645_timebased_lighting
+  ruby:
+    name: '/dev/ruby'
+    control: hidden
+    entities:
+    - switch.rubydashboard
   sys:
     name: '/sys & /mid'
     control: hidden

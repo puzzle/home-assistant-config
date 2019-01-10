@@ -99,6 +99,21 @@
       entity_id:
       - switch.systvscreen
       - switch.kafiscreen
+      - switch.rubydashboard
+
+- alias: Ruby Screen On
+  trigger:
+  - platform: time
+    at: '7:00:00'
+  condition:
+  - condition: state
+    entity_id: 'binary_sensor.workday_sensor_be'
+    state: 'on'
+  action:
+  - service: switch.turn_on
+    data:
+      entity_id:
+      - switch.rubydashboard
 
 - alias: Coffee Machine On
   trigger:
