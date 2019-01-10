@@ -100,6 +100,34 @@
       - switch.systvscreen
       - switch.kafiscreen
 
+- alias: Coffee Machine On
+  trigger:
+  - platform: time
+    at: '6:40:00'
+  condition:
+  - condition: state
+    entity_id: 'binary_sensor.workday_sensor_be'
+    state: 'on'
+  action:
+  - service: switch.turn_on
+    data:
+      entity_id:
+      - switch.sonoff5530
+
+- alias: Coffee Machine Off
+  trigger:
+  - platform: time
+    at: '19:00:00'
+  condition:
+  - condition: state
+    entity_id: 'binary_sensor.workday_sensor_be'
+    state: 'on'
+  action:
+  - service: switch.turn_off
+    data:
+      entity_id:
+      - switch.sonoff5530
+
 - alias: Octoprint Start Printing Notification
   trigger:
   - platform: state
