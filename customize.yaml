@@ -37,6 +37,9 @@
     switch.kafiscreen:
       friendly_name: 'Kafi Screen'
       icon: mdi:television
+    switch.rubydashboard:
+      friendly_name: 'Ruby Status Dashboard'
+      icon: mdi:television
 
     automation.automatic_bar_lighting:                  
       friendly_name: 'Automatic Lighting'

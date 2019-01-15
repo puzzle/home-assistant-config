@@ -36,3 +36,6 @@
 - platform: mystrom
   host: 10.14.1.7
   name: kafiscreen
+- platform: mystrom
+  host: 10.14.1.17
+  name: rubydashboard
