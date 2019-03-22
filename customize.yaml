@@ -37,9 +37,15 @@
     switch.kafiscreen:
       friendly_name: 'Kafi Screen'
       icon: mdi:television
-    switch.rubydashboard:
-      friendly_name: 'Ruby Status Dashboard'
+    switch.rubyscreen:
+      friendly_name: 'Ruby Status Screen'
       icon: mdi:television
+    switch.gangscreen:
+      friendly_name: 'Eingang Screen'
+      icon: mdi:television
+    switch.swoascreen:
+      friendly_name: 'SWOA Screen'
+      icon: mdi:televison
 
     automation.automatic_bar_lighting:                  
       friendly_name: 'Automatic Lighting'

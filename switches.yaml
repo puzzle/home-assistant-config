@@ -38,4 +38,10 @@
   name: kafiscreen
 - platform: mystrom
   host: 10.14.1.17
-  name: rubydashboard
+  name: rubyscreen
+- platform: mystrom
+  host: 10.14.1.13
+  name: gangscreen
+- platform: mystrom
+  host: 10.14.1.24
+  name: swoascreen
