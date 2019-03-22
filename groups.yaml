@@ -38,12 +38,14 @@
     entities:
     - light.sonoff1905
     - input_boolean.sonoff1905_timebased_lighting
+    - switch.gangscreen
   devtre:
     name: '/dev/tre'
     control: hidden
     entities:
     - light.sonoff1645
     - input_boolean.sonoff1645_timebased_lighting
+    - switch.swoascreen
   ruby:
     name: '/dev/ruby'
     control: hidden

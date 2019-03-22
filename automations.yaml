@@ -84,6 +84,8 @@
       entity_id:
       - switch.systvscreen
       - switch.kafiscreen
+      - switch.gangscreen
+      - switch.swoascreen
 
 - alias: Office Screens Off
   trigger:
@@ -99,7 +101,9 @@
       entity_id:
       - switch.systvscreen
       - switch.kafiscreen
-      - switch.rubydashboard
+      - switch.gangscreen
+      - switch.swoascreen
+      - switch.rubyscreen
 
 - alias: Ruby Screen On
   trigger:
@@ -113,7 +117,7 @@
   - service: switch.turn_on
     data:
       entity_id:
-      - switch.rubydashboard
+      - switch.rubyscreen
 
 - alias: Coffee Machine On
   trigger:
