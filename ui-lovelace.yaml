@@ -1,24 +1,86 @@
 title: Puzzle Assistant
 views:
-  - title: Puzzle Assistant
-    icon: mdi:puzzle
-  - title: 3D Printer
-    icon: mdi:printer-3d
-    cards:
-      - type: glance
-        title: Printer State
-        entities:
-          - binary_sensor.octoprint_printing
-          - binary_sensor.octoprint_printing_error
-
-      - type: entities
-        title: Job State
-        entities:
-          - sensor.octoprint_current_state
-          - sensor.octoprint_job_percentage
-          - sensor.octoprint_actual_bed_temp
-          - sensor.octoprint_target_bed_temp
-          - sensor.octoprint_time_elapsed
-          - sensor.octoprint_time_remaining
-  - title: Settings
-    icon: mdi:settings
+- title: Puzzle
+  icon: mdi:puzzle
+  cards:
+  - type: glance
+    title: Bar
+    entities:
+    - entity: automation.automatic_bar_lighting
+      name: Automatic Lighting
+      icon: mdi:weather-sunset
+    - entity: switch.kafiscreen
+      name: 'Kafi Screen'
+      icon: mdi:television
+  - type: glance
+    title: Backoffice
+    entities:
+    - entity: light.sonoff1905
+      name: Floor Lamp 1
+      icon: mdi:floor-lamp
+    - entity: input_boolean.sonoff1905_timebased_lighting
+      name: Time-Based Lighting
+      icon: mdi:clock-outline
+    - entity: switch.gangscreen
+      name: Gang Screen
+      icon: mdi:television
+  - type: glance
+    title: /dev/tre
+    entities:
+    - entity: light.sonoff1645
+      name: Floor Lamp 1
+      icon: mdi:floor-lamp
+    - entity: input_boolean.sonoff1645_timebased_lighting
+      name: Time-Based Lighting
+      icon: mdi:clock-outline
+    - entity: switch.swoascreen
+      name: SWOA Screen
+      icon: mdi:television
+  - type: glance
+    title: /dev/ruby
+    entities:
+    - entity: switch.rubyscreen
+      name: Ruby Screen
+      icon: mdi:television
+  - type: glance
+    title: /sys & /mid
+    entities:
+    - entity: light.sonoff1911
+      name: Floor Lamp 1
+      icon: mdi:floor-lamp
+    - entity: input_boolean.sonoff1911_timebased_lighting
+      name: Time-Based Lighting
+      icon: mdi:clock-outline
+    - entity:  switch.systvscreen
+      name: TV Screen
+      icon: mdi:television
+  - type: glance
+    title: TUX
+    entities:
+    - entity: light.sonoff7461
+      name: Floor Lamp 1
+      icon: mdi:floor-lamp
+    - entity: light.sonoff4126
+      name: Floor Lamp 2
+      icon: mdi:floor-lamp
+    - entity: switch.sonoff1688
+      name: Projector
+      icon: mdi:projector
+- title: Settings
+  icon: mdi:settings
+  cards:
+  - type: light
+    name: Bar Bulb 1
+    entity: light.bar_bulb_1
+  - type: light
+    name: Bar Bulb 2
+    entity: light.bar_bulb_2
+  - type: light
+    name: Bar Bulb 3
+    entity: light.bar_bulb_3
+  - type: light
+    name: Bar Bulb 4
+    entity: light.bar_bulb_4
+  - type: light
+    name: Bar Bulb 5
+    entity: light.bar_bulb_5
