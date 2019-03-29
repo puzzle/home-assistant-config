@@ -46,6 +46,9 @@
     switch.swoascreen:
       friendly_name: 'SWOA Screen'
       icon: mdi:televison
+    switch.druckerscreen:
+      friendly_name: 'Screen beim Drucker'
+      icon: mdi:television
 
     automation.automatic_bar_lighting:                  
       friendly_name: 'Automatic Lighting'
