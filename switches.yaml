@@ -45,3 +45,6 @@
 - platform: mystrom
   host: 10.14.1.24
   name: swoascreen
+- platform: mystrom
+  host: 10.14.1.28
+  name: druckerscreen
