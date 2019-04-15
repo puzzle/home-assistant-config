@@ -3,9 +3,13 @@
   - platform: state
     entity_id: light.bar_bulb_1
     to: 'on'
-  - platform: time
+  - platform: time_patterns
     minutes: '/1'
     seconds: 00
+  condition:
+  - condition: state
+    entity_id: light.bar_bulb_1
+    state: 'on'
   action:
   - service: switch.bar_automatic_lighting_update
 
