@@ -2,9 +2,6 @@
       friendly_name: 'Lights'
       hidden: false
 
-    light.bar:
-      hidden: true
-
     light.sonoff1645:
       friendly_name: 'Floor Lamp 1'
       icon: mdi:floor-lamp

@@ -29,7 +29,6 @@
     - scene.bar_everyday
     - scene.bar_focus
     - scene.bar_relax
-    - light.bar
     - switch.kafiscreen
     - switch.sonoff5530
   backoffice:
