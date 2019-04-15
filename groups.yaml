@@ -32,6 +32,7 @@
     - scene.bar_relax
     - light.bar
     - switch.kafiscreen
+    - switch.sonoff5530
   backoffice:
     name: Backoffice
     control: hidden
