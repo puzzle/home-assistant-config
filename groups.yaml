@@ -7,6 +7,7 @@
     - group.bar
     - group.backoffice
     - group.devtre
+    - group.ruby
     - group.sys
     - group.tux
   3dprinter:
