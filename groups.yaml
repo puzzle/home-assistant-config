@@ -4,7 +4,6 @@
     icon: mdi:puzzle
     entities:
     - sensor.bar_motion_sensor
-    - sensor.travis_puzzlehomeassistantconfig_state
     - group.bar
     - group.backoffice
     - group.devtre
