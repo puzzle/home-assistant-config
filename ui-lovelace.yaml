@@ -12,6 +12,18 @@ views:
     - entity: switch.kafiscreen
       name: 'Kafi Screen'
       icon: mdi:television
+    - entity: switch.altekaffemaschine
+      name: 'Alte Kaffeemaschine'
+      icon: mdi:coffee
+    - entity: switch.wasserspender
+      name: 'Wasserspender'
+      icon: mdi:water-pump
+    - entity: switch.bierkuehlschrank
+      name: 'Bierkühlschrank'
+      icon: mdi:fridge
+    - entity: switch.kaffeemuehle
+      name: 'Kaffeemühle'
+      icon: mdi:coffee
   - type: glance
     title: Backoffice
     entities:
@@ -54,6 +66,18 @@ views:
     - entity:  switch.systvscreen
       name: TV Screen
       icon: mdi:television
+    - entity:  switch.apstandardt
+      name: AP Srandard T
+      icon: mdi:account-question
+    - entity: switch.drucker
+      name: 'Drucker'
+      icon: mdi:printer
+    - entity: switch.apneuc
+      name: 'AP Neu C'
+      icon: mdi:account-question
+    - entity: switch.apaltj
+      name: 'AP Alt J'
+      icon: mdi:account-question
   - type: glance
     title: TUX
     entities:
@@ -66,6 +90,15 @@ views:
     - entity: switch.sonoff1688
       name: Projector
       icon: mdi:projector
+  - type: glance
+    title: Pouse
+    entities:
+    - entity: switch.mikrowelleunten
+      name: 'Mikrowelle unten'
+      icon: mdi:microwave
+    - entity: switch.mikrowelleoben
+      name: 'Mikrowelle oben'
+      icon: mdi:microwave
 - title: Settings
   icon: mdi:settings
   cards:
@@ -84,3 +117,16 @@ views:
   - type: light
     name: Bar Bulb 5
     entity: light.bar_bulb_5
+- title: Energy
+  icon: mdi:power-plug
+  cards:
+  - type: sensor
+    name: Power Statistics
+    unit: W
+    entity: sensor.power_total
+    graph: line
+  - type: sensor
+    entity: sensor.energy_total
+    name: Energy Statistics
+    unit: kWh
+    graph: line
