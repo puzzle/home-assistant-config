@@ -48,3 +48,33 @@
 - platform: mystrom
   host: 10.14.1.28
   name: druckerscreen
+- platform: mystrom
+  host: 10.14.1.21
+  name: altekaffemaschine
+- platform: mystrom
+  host: 10.14.1.22
+  name: apstandardt
+- platform: mystrom
+  host: 10.14.1.25
+  name: wasserspender
+- platform: mystrom
+  host: 10.14.1.12
+  name: drucker
+- platform: mystrom
+  host: 10.14.1.18
+  name: bierkuehlschrank
+- platform: mystrom
+  host: 10.14.1.27
+  name: apneuc
+- platform: mystrom
+  host: 10.14.1.11
+  name: mikrowelleunten
+- platform: mystrom
+  host: 10.14.1.23
+  name: mikrowelleoben
+- platform: mystrom
+  host: 10.14.1.19
+  name: kaffeemuehle
+- platform: mystrom
+  host: 10.14.1.26
+  name: apaltj
