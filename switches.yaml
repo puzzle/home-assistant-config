@@ -50,7 +50,7 @@
   name: druckerscreen
 - platform: mystrom
   host: 10.14.1.21
-  name: altekaffemaschine
+  name: nespressomaschine
 - platform: mystrom
   host: 10.14.1.22
   name: apstandardt

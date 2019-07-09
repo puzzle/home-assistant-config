@@ -32,7 +32,7 @@
     - scene.bar_relax
     - switch.kafiscreen
     - switch.sonoff5530
-    - switch.altekaffemaschine
+    - switch.nespressomaschine
     - switch.wasserspender
     - switch.bierkuehlschrank
     - switch.kaffeemuehle

@@ -46,11 +46,11 @@
     switch.druckerscreen:
       friendly_name: 'Screen beim Drucker'
       icon: mdi:television
-    switch.altekaffemaschine:
-      friendly_name: 'Alte Kaffeemaschine'
+    switch.nespressomaschine:
+      friendly_name: 'Nespresso Kaffeemaschine'
       icon: mdi:coffee
     switch.apstandardt:
-      friendly_name: 'AP Standard T'
+      friendly_name: 'AP Standard Tim'
       icon: mdi:account-question
     switch.wasserspender:
       friendly_name: 'Wasserspender'
@@ -62,7 +62,7 @@
       friendly_name: 'Bierkühlschrank bei der Bar'
       icon: mdi:fridge
     switch.apneuc:
-      friendly_name: 'AP neu C'
+      friendly_name: 'AP neu Chrigu'
       icon: mdi:account-question
     switch.mikrowelleunten:
       friendly_name: 'Mikrowelle unten'
@@ -74,7 +74,7 @@
       friendly_name: 'Kaffeemühle'
       icon: mdi:television
     switch.apaltj:
-      friendly_name: 'AP Alt J'
+      friendly_name: 'AP Alt Janiss'
       icon: mdi:account-question
 
     automation.automatic_bar_lighting:

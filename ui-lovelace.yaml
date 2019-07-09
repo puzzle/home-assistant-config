@@ -12,8 +12,8 @@ views:
     - entity: switch.kafiscreen
       name: 'Kafi Screen'
       icon: mdi:television
-    - entity: switch.altekaffemaschine
-      name: 'Alte Kaffeemaschine'
+    - entity: switch.nespressomaschine
+      name: 'Nespresso Kaffeemaschine'
       icon: mdi:coffee
     - entity: switch.wasserspender
       name: 'Wasserspender'
@@ -67,16 +67,16 @@ views:
       name: TV Screen
       icon: mdi:television
     - entity:  switch.apstandardt
-      name: AP Srandard T
+      name: AP Srandard Tim
       icon: mdi:account-question
     - entity: switch.drucker
-      name: 'Drucker'
+      name: Drucker
       icon: mdi:printer
     - entity: switch.apneuc
-      name: 'AP Neu C'
+      name: AP Neu Chrigu
       icon: mdi:account-question
     - entity: switch.apaltj
-      name: 'AP Alt J'
+      name: AP Alt Janiss
       icon: mdi:account-question
   - type: glance
     title: TUX
