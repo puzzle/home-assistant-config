@@ -1,8 +1,3 @@
-- platform: travisci
-  api_key: !secret travis_api_key
-  repository:
-  - puzzle/home-assistant-config
-  entity_namespace: travis
 - platform: mqtt
   name: sonoff1688
   state_topic: "be3/tux/projector/tele/SENSOR"

@@ -1,13 +1,13 @@
-  default_view:                                                                                                                                        
+  default_view:
     name: Puzzle Assistant
-    view: yes                                                                                                                                          
+    view: yes
     icon: mdi:puzzle
     entities:
     - sensor.bar_motion_sensor
-    - sensor.travis_puzzlehomeassistantconfig_state
     - group.bar
     - group.backoffice
     - group.devtre
+    - group.ruby
     - group.sys
     - group.tux
   3dprinter:
@@ -30,8 +30,12 @@
     - scene.bar_everyday
     - scene.bar_focus
     - scene.bar_relax
-    - light.bar
     - switch.kafiscreen
+    - switch.sonoff5530
+    - switch.nespressomaschine
+    - switch.wasserspender
+    - switch.bierkuehlschrank
+    - switch.kaffeemuehle
   backoffice:
     name: Backoffice
     control: hidden
@@ -58,6 +62,16 @@
     - light.sonoff1911
     - input_boolean.sonoff1911_timebased_lighting
     - switch.systvscreen
+    - switch.apstandardt
+    - switch.drucker
+    - switch.apneuc
+    - switch.apaltj
+  pouse:
+    name: '/pouse'
+    control: hidden
+    entities:
+    - switch.mikrowelleunten
+    - switch.mikrowelleunten
   tux:
     name: TUX
     control: hidden
