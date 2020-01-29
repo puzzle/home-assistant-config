@@ -49,7 +49,8 @@
     entities:
     - light.sonoff1645
     - input_boolean.sonoff1645_timebased_lighting
-    - switch.swoascreen
+    - switch.devtrescreen1
+    - switch.devtrescreen2
   ruby:
     name: '/dev/ruby'
     control: hidden
