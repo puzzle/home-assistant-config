@@ -78,3 +78,9 @@
 - platform: mystrom
   host: 10.14.1.26
   name: apaltj
+- platform: mystrom
+  host: 10.14.1.10
+  name: devtrescreen1
+- platform: mystrom
+  host: 10.14.1.14
+  name: devtrescreen2

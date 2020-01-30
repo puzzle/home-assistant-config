@@ -89,7 +89,8 @@
       - switch.systvscreen
       - switch.kafiscreen
       - switch.gangscreen
-      - switch.swoascreen
+      - switch.devtrescreen1
+      - switch.devtrescreen2
       - switch.druckerscreen
 
 - alias: Office Screens Off
