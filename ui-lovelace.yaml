@@ -9,21 +9,9 @@ views:
     - entity: automation.automatic_bar_lighting
       name: Automatic Lighting
       icon: mdi:weather-sunset
-    - entity: switch.kafiscreen
+    - entity: switch.mystrom3
       name: 'Kafi Screen'
       icon: mdi:television
-    - entity: switch.nespressomaschine
-      name: 'Nespresso Kaffeemaschine'
-      icon: mdi:coffee
-    - entity: switch.wasserspender
-      name: 'Wasserspender'
-      icon: mdi:water-pump
-    - entity: switch.bierkuehlschrank
-      name: 'Bierkühlschrank'
-      icon: mdi:fridge
-    - entity: switch.kaffeemuehle
-      name: 'Kaffeemühle'
-      icon: mdi:coffee
   - type: glance
     title: Backoffice
     entities:
@@ -33,8 +21,8 @@ views:
     - entity: input_boolean.sonoff1905_timebased_lighting
       name: Time-Based Lighting
       icon: mdi:clock-outline
-    - entity: switch.gangscreen
-      name: Gang Screen
+    - entity: switch.mystrom2
+      name: Eingang Screen 3. OG
       icon: mdi:television
   - type: glance
     title: /dev/tre
@@ -45,13 +33,16 @@ views:
     - entity: input_boolean.sonoff1645_timebased_lighting
       name: Time-Based Lighting
       icon: mdi:clock-outline
-    - entity: switch.swoascreen
-      name: SWOA Screen
+    - entity: switch.mystrom7
+      name: Screen vorne
+      icon: mdi:television
+    - entity: switch.mystrom8
+      name: Screen hinten
       icon: mdi:television
   - type: glance
     title: /dev/ruby
     entities:
-    - entity: switch.rubyscreen
+    - entity: switch.mystrom6
       name: Ruby Screen
       icon: mdi:television
   - type: glance
@@ -63,21 +54,9 @@ views:
     - entity: input_boolean.sonoff1911_timebased_lighting
       name: Time-Based Lighting
       icon: mdi:clock-outline
-    - entity:  switch.systvscreen
+    - entity:  switch.mystrom1
       name: TV Screen
       icon: mdi:television
-    - entity:  switch.apstandardt
-      name: AP Srandard Tim
-      icon: mdi:account-question
-    - entity: switch.drucker
-      name: Drucker
-      icon: mdi:printer
-    - entity: switch.apneuc
-      name: AP Neu Chrigu
-      icon: mdi:account-question
-    - entity: switch.apaltj
-      name: AP Alt Janiss
-      icon: mdi:account-question
   - type: glance
     title: TUX
     entities:
@@ -90,15 +69,6 @@ views:
     - entity: switch.sonoff1688
       name: Projector
       icon: mdi:projector
-  - type: glance
-    title: Pouse
-    entities:
-    - entity: switch.mikrowelleunten
-      name: 'Mikrowelle unten'
-      icon: mdi:microwave
-    - entity: switch.mikrowelleoben
-      name: 'Mikrowelle oben'
-      icon: mdi:microwave
 - title: Settings
   icon: mdi:settings
   cards:

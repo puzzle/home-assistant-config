@@ -86,12 +86,12 @@
   - service: switch.turn_on
     data:
       entity_id:
-      - switch.systvscreen
-      - switch.kafiscreen
-      - switch.gangscreen
-      - switch.devtrescreen1
-      - switch.devtrescreen2
-      - switch.druckerscreen
+      - switch.mystrom1
+      - switch.mystrom3
+      - switch.mystrom2
+      - switch.mystrom5
+      - switch.mystrom7
+      - switch.mystrom8
 
 - alias: Office Screens Off
   trigger:
@@ -105,12 +105,13 @@
   - service: switch.turn_off
     data:
       entity_id:
-      - switch.systvscreen
-      - switch.kafiscreen
-      - switch.gangscreen
-      - switch.swoascreen
-      - switch.druckerscreen
-      - switch.rubyscreen
+      - switch.mystrom1
+      - switch.mystrom3
+      - switch.mystrom2
+      - switch.mystrom5
+      - switch.mystrom6
+      - switch.mystrom7
+      - switch.mystrom8
 
 - alias: Ruby Screen On
   trigger:
@@ -124,7 +125,7 @@
   - service: switch.turn_on
     data:
       entity_id:
-      - switch.rubyscreen
+      - switch.mystrom6
 
 - alias: Coffee Machine On
   trigger:

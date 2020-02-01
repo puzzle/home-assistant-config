@@ -28,54 +28,27 @@
     switch.sonoff1688:
       friendly_name: 'Projector'
       icon: mdi:projector
-    switch.systvscreen:
+    switch.mystrom1:
       friendly_name: 'TV Screen'
       icon: mdi:television
-    switch.kafiscreen:
+    switch.mystrom3:
       friendly_name: 'Kafi Screen'
       icon: mdi:television
-    switch.rubyscreen:
+    switch.mystrom6:
       friendly_name: 'Ruby Status Screen'
       icon: mdi:television
-    switch.gangscreen:
-      friendly_name: 'Eingang Screen'
+    switch.mystrom2:
+      friendly_name: 'Eingang Screen 3. OG'
       icon: mdi:television
-    switch.swoascreen:
-      friendly_name: 'SWOA Screen'
-      icon: mdi:televison
-    switch.druckerscreen:
-      friendly_name: 'Screen beim Drucker'
+    switch.mystrom7:
+      friendly_name: 'Screen /dev/tre vorne'
       icon: mdi:television
-    switch.nespressomaschine:
-      friendly_name: 'Nespresso Kaffeemaschine'
-      icon: mdi:coffee
-    switch.apstandardt:
-      friendly_name: 'AP Standard Tim'
-      icon: mdi:account-question
-    switch.wasserspender:
-      friendly_name: 'Wasserspender'
-      icon: mdi:mdi-water-pump
-    switch.drucker:
-      friendly_name: 'Drucker'
-      icon: mdi:printer
-    switch.bierkuehlschrank:
-      friendly_name: 'Bierkühlschrank bei der Bar'
-      icon: mdi:fridge
-    switch.apneuc:
-      friendly_name: 'AP neu Chrigu'
-      icon: mdi:account-question
-    switch.mikrowelleunten:
-      friendly_name: 'Mikrowelle unten'
-      icon: mdi:mdi-microwave
-    switch.mikrowelleoben:
-      friendly_name: 'Mikrowelle oben'
-      icon: mdi:mdi-microwave
-    switch.kaffeemuehle:
-      friendly_name: 'Kaffeemühle'
+    switch.mystrom8:
+      friendly_name: 'Screen /dev/tre hinten'
       icon: mdi:television
-    switch.apaltj:
-      friendly_name: 'AP Alt Janiss'
-      icon: mdi:account-question
+    switch.mystrom5:
+      friendly_name: 'Screen in der Piazza'
+      icon: mdi:television
 
     automation.automatic_bar_lighting:
       friendly_name: 'Automatic Lighting'
