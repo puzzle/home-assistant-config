@@ -32,22 +32,22 @@
   retain: true
 - platform: mystrom
   host: 10.14.1.100
-  name: mystrom1
+  name: mystrom001
 - platform: mystrom
   host: 10.14.1.102
-  name: mystrom3
+  name: mystrom003
 - platform: mystrom
   host: 10.14.1.105
-  name: mystrom6
+  name: mystrom006
 - platform: mystrom
   host: 10.14.1.101
-  name: mystrom2
+  name: mystrom002
 - platform: mystrom
   host: 10.14.1.106
-  name: mystrom7
+  name: mystrom007
 - platform: mystrom
   host: 10.14.1.104
-  name: mystrom5
+  name: mystrom005
 - platform: mystrom
   host: 10.14.1.107
-  name: mystrom8
+  name: mystrom008

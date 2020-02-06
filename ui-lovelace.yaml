@@ -9,7 +9,7 @@ views:
     - entity: automation.automatic_bar_lighting
       name: Automatic Lighting
       icon: mdi:weather-sunset
-    - entity: switch.mystrom3
+    - entity: switch.mystrom003
       name: 'Kafi Screen'
       icon: mdi:television
   - type: glance
@@ -21,7 +21,7 @@ views:
     - entity: input_boolean.sonoff1905_timebased_lighting
       name: Time-Based Lighting
       icon: mdi:clock-outline
-    - entity: switch.mystrom2
+    - entity: switch.mystrom002
       name: Eingang Screen 3. OG
       icon: mdi:television
   - type: glance
@@ -33,16 +33,16 @@ views:
     - entity: input_boolean.sonoff1645_timebased_lighting
       name: Time-Based Lighting
       icon: mdi:clock-outline
-    - entity: switch.mystrom7
+    - entity: switch.mystrom007
       name: Screen vorne
       icon: mdi:television
-    - entity: switch.mystrom8
+    - entity: switch.mystrom008
       name: Screen hinten
       icon: mdi:television
   - type: glance
     title: /dev/ruby
     entities:
-    - entity: switch.mystrom6
+    - entity: switch.mystrom006
       name: Ruby Screen
       icon: mdi:television
   - type: glance
@@ -54,7 +54,7 @@ views:
     - entity: input_boolean.sonoff1911_timebased_lighting
       name: Time-Based Lighting
       icon: mdi:clock-outline
-    - entity:  switch.mystrom1
+    - entity:  switch.mystrom001
       name: TV Screen
       icon: mdi:television
   - type: glance
