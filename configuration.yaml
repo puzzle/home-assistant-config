@@ -1,72 +1,54 @@
 homeassistant:
-  name: Puzzle Assistant
-  latitude: !secret ha_latitude
-  longitude: !secret ha_longitude
-  elevation: !secret ha_elevation
-  unit_system: !secret ha_unit_system
-  time_zone: !secret ha_time_zone
-  customize: !include customize.yaml
+  name: Puzzle
+  latitude: 46.94354
+  longitude: 7.43259
+  elevation: 525
+  unit_system: metric
+  time_zone: Europe/Zurich
 
-frontend:
-  themes:
-    puzzle:
-      primary-color: "#1E5A96"
-      primary-background-color: "#FFFFFF"
-      secondary-background-color: "#FFFFFF"
+lovelace:
+  mode: yaml
 
 http:
-  server_port: !secret http_server_port
-  base_url: !secret http_base_url
+  base_url: home-assistant.ocp-internal.puzzle.ch
+  #base_url: assistant.puzzle.ch
+
+frontend:
+config:
+history:
 
 updater:
   reporting: false
-  include_used_components: false
 
-history:
+counter:
+  fyrabebier:
+    initial: 1
 
-logbook:
-  exclude:
-    entities:
-    - automation.automatic_bar_lighting
-
-sun:
-
-notify: !include notifiers.yaml
-
-mqtt:
-  broker: !secret mqtt_host
-
-light: !include lights.yaml
-
-tradfri:
-  host: !secret tradfri_host
+timer:
+  fyrabe:
+    duration: '01:00:00'
 
 google:
   client_id: !secret google_client_id
   client_secret: !secret google_client_secret
 
+hue:
+  bridges:
+    - host: 10.14.0.7
+
+octoprint:
+  host: 10.14.1.20
+  api_key: !secret octoprint_api_key
+  bed: true
+
+#prometheus:
+#  namespace: homeassistant
+
+notify: !include notifiers.yaml
 binary_sensor: !include binary_sensors.yaml
 sensor: !include sensors.yaml
 switch: !include switches.yaml
-
-input_boolean: !include input_booleans.yaml
 group: !include groups.yaml
-scene: !include scenes.yaml
 automation: !include automations.yaml
-
-octoprint:
-  host: !secret octoprint_host 
-  api_key: !secret octoprint_api_key
-  bed: true
-  sensors:
-    monitored_conditions:
-      - 'Current State'
-      - 'Temperatures'
-      - 'Job Percentage'
-      - 'Time Elapsed'
-      - 'Time Remaining'
-  binary_sensors:
-    monitored_conditions:
-      - 'Printing'
-      - 'Printing Error'
-
+script: !include scripts.yaml
+scene: !include scenes.yaml

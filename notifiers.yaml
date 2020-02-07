@@ -1,15 +1,9 @@
 - platform: rocketchat
-  name: rocketchat_status
-  url: !secret rocketchat_url
-  username: !secret rocketchat_username
-  password: !secret rocketchat_password
-  room: pass-status
-- platform: rocketchat
   name: rocketchat_fyrabe
   url: !secret rocketchat_url
   username: !secret rocketchat_username
   password: !secret rocketchat_password
-  room: pass-fyrabe
+  room: fyrabe
 - platform: rocketchat
   name: rocketchat_3ddruck
   url: !secret rocketchat_url
@@ -17,9 +11,8 @@
   password: !secret rocketchat_password
   room: 3d-druck
 - platform: twitter
-  name: twitter
+  name: twitter_fyrabe
   consumer_key: !secret twitter_consumer_key
   consumer_secret: !secret twitter_consumer_secret
   access_token: !secret twitter_access_token
   access_token_secret: !secret twitter_access_token_secret
-

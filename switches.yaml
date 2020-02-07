@@ -1,35 +1,3 @@
-- platform: flux
-  lights:
-  - light.bar_bulb_1
-  - light.bar_bulb_2
-  - light.bar_bulb_3
-  - light.bar_bulb_4
-  - light.bar_bulb_5
-  name: Bar Automatic Lighting
-  start_time: '06:00'
-  start_colortemp: 3800
-  sunset_colortemp: 2300
-  mode: mired
-  transition: 1
-  interval: 1
-- platform: mqtt
-  name: sonoff1688
-  state_topic: "be3/tux/projector/stat/POWER"
-  command_topic: "be3/tux/projector/cmnd/POWER"
-  availability_topic: "be3/tux/projector/tele/LWT"
-  qos: 1
-  payload_available: "Online"
-  payload_not_available: "Offline"
-  retain: true
-- platform: mqtt
-  name: sonoff5530
-  state_topic: "be3/bar/coffee/stat/POWER"
-  command_topic: "be3/bar/coffee/cmnd/POWER"
-  availability_topic: "be3/bar/coffee/tele/LWT"
-  qos: 1
-  payload_available: "Online"
-  payload_not_available: "Offline"
-  retain: true
 - platform: mystrom
   host: 10.14.1.1
   name: mystrom001
@@ -54,3 +22,15 @@
 - platform: mystrom
   host: 10.14.1.8
   name: mystrom008
+- platform: mystrom
+  host: 10.14.1.9
+  name: mystrom009
+- platform: mystrom
+  host: 10.14.1.10
+  name: mystrom010
+- platform: mystrom
+  host: 10.14.1.11
+  name: mystrom011
+- platform: mystrom
+  host: 10.14.1.12
+  name: mystrom012

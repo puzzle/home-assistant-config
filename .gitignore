@@ -1,7 +1,5 @@
-gateway_psk.txt
 secrets.yaml
 .HA_VERSION
-.tradfri_psk.conf
 .uuid
 *.log
 *.db*

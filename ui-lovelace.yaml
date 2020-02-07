@@ -1,102 +1,158 @@
-title: Puzzle Assistant
+title: Puzzle
 views:
-- title: Puzzle
-  icon: mdi:puzzle
-  cards:
-  - type: glance
-    title: Bar
-    entities:
-    - entity: automation.automatic_bar_lighting
-      name: Automatic Lighting
-      icon: mdi:weather-sunset
-    - entity: switch.mystrom003
-      name: 'Kafi Screen'
-      icon: mdi:television
-  - type: glance
-    title: Backoffice
-    entities:
-    - entity: light.sonoff1905
-      name: Floor Lamp 1
-      icon: mdi:floor-lamp
-    - entity: input_boolean.sonoff1905_timebased_lighting
-      name: Time-Based Lighting
-      icon: mdi:clock-outline
-    - entity: switch.mystrom002
-      name: Eingang Screen 3. OG
-      icon: mdi:television
-  - type: glance
-    title: /dev/tre
-    entities:
-    - entity: light.sonoff1645
-      name: Floor Lamp 1
-      icon: mdi:floor-lamp
-    - entity: input_boolean.sonoff1645_timebased_lighting
-      name: Time-Based Lighting
-      icon: mdi:clock-outline
-    - entity: switch.mystrom007
-      name: Screen vorne
-      icon: mdi:television
-    - entity: switch.mystrom008
-      name: Screen hinten
-      icon: mdi:television
-  - type: glance
-    title: /dev/ruby
-    entities:
-    - entity: switch.mystrom006
-      name: Ruby Screen
-      icon: mdi:television
-  - type: glance
-    title: /sys & /mid
-    entities:
-    - entity: light.sonoff1911
-      name: Floor Lamp 1
-      icon: mdi:floor-lamp
-    - entity: input_boolean.sonoff1911_timebased_lighting
-      name: Time-Based Lighting
-      icon: mdi:clock-outline
-    - entity:  switch.mystrom001
-      name: TV Screen
-      icon: mdi:television
-  - type: glance
-    title: TUX
-    entities:
-    - entity: light.sonoff7461
-      name: Floor Lamp 1
-      icon: mdi:floor-lamp
-    - entity: light.sonoff4126
-      name: Floor Lamp 2
-      icon: mdi:floor-lamp
-    - entity: switch.sonoff1688
-      name: Projector
-      icon: mdi:projector
-- title: Settings
-  icon: mdi:settings
-  cards:
-  - type: light
-    name: Bar Bulb 1
-    entity: light.bar_bulb_1
-  - type: light
-    name: Bar Bulb 2
-    entity: light.bar_bulb_2
-  - type: light
-    name: Bar Bulb 3
-    entity: light.bar_bulb_3
-  - type: light
-    name: Bar Bulb 4
-    entity: light.bar_bulb_4
-  - type: light
-    name: Bar Bulb 5
-    entity: light.bar_bulb_5
-- title: Energy
-  icon: mdi:power-plug
-  cards:
-  - type: sensor
-    name: Power Statistics
-    unit: W
-    entity: sensor.power_total
-    graph: line
-  - type: sensor
-    entity: sensor.energy_total
-    name: Energy Statistics
-    unit: kWh
-    graph: line
+  - badges:
+      - entity: binary_sensor.beer_button
+      - entity: counter.fyrabebier
+        name: Fyrabebier Counter
+      - entity: timer.fyrabe
+        name: Fyrabebier Timer
+    cards:
+      - entities:
+          - entity: light.lvl3_bar
+            icon: 'mdi:ceiling-light'
+            name: Lights
+          - entity: switch.mystrom004
+            icon: 'mdi:speaker'
+            name: Audio System
+            state_color: true
+          - entity: switch.mystrom003
+            icon: 'mdi:television'
+            name: Screen
+            state_color: true
+          - entity: binary_sensor.lvl3_bar_sensor_motion
+            name: Motion Sensor
+          - entity: sensor.lvl3_bar_sensor_temperature
+            name: Temperature Sensor
+          - entity: sensor.lvl3_bar_sensor_light_level
+            name: Light Level Sensor
+        show_header_toggle: false
+        title: Lvl3 Bar
+        type: entities
+      - entities:
+          - entity: switch.mystrom002
+            icon: 'mdi:television'
+            name: Screen
+            state_color: true
+        show_header_toggle: false
+        title: Lvl3 Hallway
+        type: entities
+      - entities:
+          - entity: switch.mystrom001
+            icon: 'mdi:television'
+            name: Screen
+            state_color: true
+        show_header_toggle: false
+        title: Lvl3 /sys & /mid Office
+        type: entities
+      - entities:
+          - entity: switch.mystrom005
+            icon: 'mdi:television'
+            name: Screen
+            state_color: true
+        show_header_toggle: false
+        title: Lvl3 Piazza
+        type: entities
+      - entities:
+          - entity: switch.mystrom006
+            icon: 'mdi:television'
+            name: Screen
+            state_color: true
+        show_header_toggle: false
+        title: Lvl3 /dev/ruby Office
+        type: entities
+      - entities:
+          - entity: switch.mystrom009
+            icon: 'mdi:projector'
+            name: Projector
+            state_color: true
+          - entity: switch.mystrom010
+            icon: 'mdi:floor-lamp'
+            name: Floor Lamp Front
+            state_color: true
+          - entity: switch.mystrom012
+            icon: 'mdi:floor-lamp'
+            name: Floor Lamp Back
+            state_color: true
+        show_header_toggle: false
+        title: Lvl3 Tux Meeting Room
+        type: entities
+      - entities:
+          - entity: switch.mystrom007
+            icon: 'mdi:television'
+            name: Screen Front
+            state_color: true
+          - entity: switch.mystrom008
+            icon: 'mdi:television'
+            name: Screen Back
+            state_color: true
+        show_header_toggle: false
+        title: Lvl-1 /dev/tre Office
+        type: entities
+    icon: 'mdi:home-assistant'
+    path: default_view
+    title: Home
+  - badges: []
+    cards:
+      - type: sensor
+        entity: sensor.mystrom001
+        name: Lvl3 /sys & /mid Office Screen
+        icon: mdi:television
+        graph: line
+      - type: sensor
+        entity: sensor.mystrom002
+        name: Lvl3 Hallway Screen
+        icon: mdi:television
+        graph: line
+      - type: sensor
+        entity: sensor.mystrom003
+        name: Lvl3 Bar Screen
+        icon: mdi:television
+        graph: line
+      - type: sensor
+        entity: sensor.mystrom004
+        name: Lvl3 Bar Audio System
+        icon: mdi:television
+        graph: line
+      - type: sensor
+        entity: sensor.mystrom005
+        name: Lvl3 Piazza Screen
+        icon: mdi:television
+        graph: line
+      - type: sensor
+        entity: sensor.mystrom006
+        name: Lvl3 /dev/ruby Office Screen
+        icon: mdi:television
+        graph: line
+      - type: sensor
+        entity: sensor.mystrom007
+        name: Lvl-1 /dev/tre Office Screen Front
+        icon: mdi:television
+        graph: line
+      - type: sensor
+        entity: sensor.mystrom008
+        name: Lvl-1 /dev/tre Office Screen Back
+        icon: mdi:television
+        graph: line
+      - type: sensor
+        entity: sensor.mystrom009
+        name: Lvl3 Tux Meeting Room Projector
+        icon: mdi:projector
+        graph: line
+      - type: sensor
+        entity: sensor.mystrom010
+        name: Lvl3 Tux Meeting Room Floor Lamp Front
+        icon: mdi:floor-lamp
+        graph: line
+      - type: sensor
+        entity: sensor.mystrom011
+        name: Lvl3 /sys & /mid Office Floor Lamp
+        icon: mdi:floor-lamp
+        graph: line
+      - type: sensor
+        entity: sensor.mystrom012
+        name: Lvl3 Tux Meeting Room Floor Lamp Back
+        icon: mdi:floor-lamp
+        graph: line
+    icon: 'mdi:gauge'
+    path: power
+    title: Power

@@ -1,80 +1,82 @@
-- alias: Automatic Bar Lighting
+- id: '1574785708776'
+  alias: Fyrabebier Notifications
+  description: ''
   trigger:
-  - platform: state
-    entity_id: light.bar_bulb_1
+  - device_id: 623d7c88d388467fb678cc026a1907e8
+    domain: binary_sensor
+    entity_id: binary_sensor.beer_button
+    platform: device
+    type: turned_on
+  condition:
+  - condition: state
+    entity_id: timer.fyrabe
+    state: idle
+  action:
+  - data:
+      entity_id: counter.fyrabebier
+    service: counter.increment
+  - alias: ''
+    data:
+      message: 'Es git Bier ar Bäupstrass :beers:'
+    service: notify.rocketchat_fyrabe
+  - data:
+      message: 'Es git Bier ar Bäupstrass 🍻 #{{ states(''counter.fyrabebier'') }}'
+    service: notify.twitter_fyrabe
+  - data:
+      entity_id: timer.fyrabe
+    service: timer.start
+
+- id: '1576084756618'
+  alias: Bar Lights On
+  description: ''
+  trigger:
+  - entity_id: binary_sensor.lvl3_bar_sensor_motion
+    platform: state
     to: 'on'
-  - platform: time_patterns
-    minutes: '/1'
-    seconds: 00
-  condition:
-  - condition: state
-    entity_id: light.bar_bulb_1
-    state: 'on'
+  condition: []
   action:
-  - service: switch.bar_automatic_lighting_update
-
-- alias: Low Battery Alert
+  - data:
+      group_name: Lvl3 Bar
+      scene_name: Normal
+    service: hue.hue_activate_scene
+    
+- id: '1576084854156'
+  alias: Bar Lights Off
+  description: ''
   trigger:
-  - platform: numeric_state
-    entity_id:
-    - sensor.tradfri_motion_sensor
-    below: 20
+  - entity_id: binary_sensor.lvl3_bar_sensor_motion
+    for: 0:10:00
+    platform: state
+    to: 'off'
+  condition: []
   action:
-  - service: notify.rocketchat_status
-    data_template:
-      message: ":battery: {{ trigger.to_state.name }} is less than 20% battery"
+  - data:
+      entity_id: light.lvl3_bar
+    service: light.turn_off
 
-- alias: Startup Notification
+- id: '1576853829501'
+  alias: Fyrabebier Signalisation
+  description: ''
   trigger:
-  - platform: homeassistant
-    event: start
+  - device_id: 8894cf2f455b491d9b1df00a9da0fc31
+    domain: binary_sensor
+    entity_id: binary_sensor.beer_button
+    platform: device
+    type: turned_on
+  condition: []
   action:
-  - service: notify.rocketchat_status
-    data:
-      message: ":hass: Home Assistant is up and running"
+  - entity_id: light.lvl3_bar
+    service: light.turn_off
+  - entity_id: switch.carousel
+    service: switch.turn_on
+  - delay: 00:00:03
+  - entity_id: switch.carousel
+    service: switch.turn_off
+  - entity_id: light.lvl3_bar
+    service: light.turn_on
 
-- alias: Shutdown Notification
-  trigger:
-  - platform: homeassistant
-    event: shutdown
-  action:
-  - service: notify.rocketchat_status
-    data:
-      message: ":hass: Home Assistant is stopped"
-
-- alias: Office Lights On
-  trigger:
-  - platform: time
-    at: '7:00:00'
-  condition:
-  - condition: state
-    entity_id: 'binary_sensor.workday_sensor_be'
-    state: 'on'
-  action:
-  - service: light.turn_on
-    data:
-      entity_id:
-      - light.sonoff1645
-      - light.sonoff1905
-      - light.sonoff1911
-
-- alias: Office Lights Off
-  trigger:
-  - platform: time
-    at: '20:00:00'
-  condition:
-  - condition: state
-    entity_id: 'binary_sensor.workday_sensor_be'
-    state: 'on'
-  action:
-  - service: light.turn_off
-    data:
-      entity_id:
-      - light.sonoff1645
-      - light.sonoff1905
-      - light.sonoff1911
-
-- alias: Office Screens On
+- id: 'allscreenson'
+  alias: All Screens On
   trigger:
   - platform: time
     at: '7:45:00'
@@ -86,14 +88,10 @@
   - service: switch.turn_on
     data:
       entity_id:
-      - switch.mystrom001
-      - switch.mystrom003
-      - switch.mystrom002
-      - switch.mystrom005
-      - switch.mystrom007
-      - switch.mystrom008
+      - group.all_screen_switches
 
-- alias: Office Screens Off
+- id: 'switchoff1800'
+  alias: Switch Off At 1800
   trigger:
   - platform: time
     at: '18:00:00'
@@ -105,15 +103,11 @@
   - service: switch.turn_off
     data:
       entity_id:
-      - switch.mystrom001
-      - switch.mystrom003
-      - switch.mystrom002
-      - switch.mystrom005
-      - switch.mystrom006
-      - switch.mystrom007
-      - switch.mystrom008
+      - group.all_screen_switches
+      - group.all_floor_lamp_switches
 
-- alias: Ruby Screen On
+- id: 'switchon0700'
+  alias: Switch On At 0700
   trigger:
   - platform: time
     at: '7:00:00'
@@ -126,36 +120,37 @@
     data:
       entity_id:
       - switch.mystrom006
+      - group.all_floor_lamp_switches
 
-- alias: Coffee Machine On
+- id: 'projectoron'
+  alias: Projector On
+  description: ''
   trigger:
-  - platform: time
-    at: '6:40:00'
-  condition:
-  - condition: state
-    entity_id: 'binary_sensor.workday_sensor_be'
-    state: 'on'
+  - above: '20'
+    entity_id: sensor.mystrom009
+    platform: numeric_state
+  condition: []
   action:
-  - service: switch.turn_on
-    data:
-      entity_id:
-      - switch.sonoff5530
+  - entity_id: switch.mystrom010
+    service: switch.turn_off
 
-- alias: Coffee Machine Off
+- id: 'projectoroff'
+  alias: Projector Off
+  description: ''
   trigger:
-  - platform: time
-    at: '19:00:00'
-  condition:
-  - condition: state
-    entity_id: 'binary_sensor.workday_sensor_be'
-    state: 'on'
+  - below: '20'
+    entity_id: sensor.mystrom009
+    platform: numeric_state
+  - entity_id: sensor.mystrom009
+    platform: state              
+    to: 'None'
+  condition: []
   action:
-  - service: switch.turn_off
-    data:
-      entity_id:
-      - switch.sonoff5530
+  - entity_id: switch.mystrom010
+    service: switch.turn_on
 
-- alias: Octoprint Start Printing Notification
+- id: 'octoprintstart'
+  alias: Octoprint Start Printing Notification
   trigger:
   - platform: state
     entity_id: binary_sensor.octoprint_printing
@@ -165,7 +160,8 @@
     data_template:
       message: "3D-Printer started printing. Time remaining: {{ sensor.octoprint_time_remaining }}"
 
-- alias: Octoprint Stop Printing Notification
+- id: 'octoprintstop'
+  alias: Octoprint Stop Printing Notification
   trigger:
   - platform: state
     entity_id: binary_sensor.octoprint_printing
@@ -174,4 +170,3 @@
   - service: notify.rocketchat_3ddruck
     data_template:
       message: "3D-Printer stopped printing..."
-
