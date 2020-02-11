@@ -10,12 +10,12 @@ lovelace:
   mode: yaml
 
 http:
-  base_url: home-assistant.ocp-internal.puzzle.ch
-  #base_url: assistant.puzzle.ch
+  base_url: assistant.puzzle.ch
 
 frontend:
 config:
 history:
+logbook:
 
 updater:
   reporting: false
@@ -36,10 +36,10 @@ hue:
   bridges:
     - host: 10.14.0.7
 
-octoprint:
-  host: 10.14.1.20
-  api_key: !secret octoprint_api_key
-  bed: true
+#octoprint:
+#  host: 10.14.1.20
+#  api_key: !secret octoprint_api_key
+#  bed: true
 
 #prometheus:
 #  namespace: homeassistant

@@ -75,8 +75,23 @@
   - entity_id: light.lvl3_bar
     service: light.turn_on
 
-- id: 'allscreenson'
-  alias: All Screens On
+- id: 'switchon0700'
+  alias: Switch On At 0700
+  trigger:
+  - platform: time
+    at: '7:00:00'
+  condition:
+  - condition: state
+    entity_id: 'binary_sensor.workday_sensor_be'
+    state: 'on'
+  action:
+  - service: switch.turn_on
+    data:
+      entity_id:
+      - switch.mystrom006
+
+- id: 'switchon0745'
+  alias: Switch On At 0745
   trigger:
   - platform: time
     at: '7:45:00'
@@ -89,6 +104,7 @@
     data:
       entity_id:
       - group.all_screen_switches
+      - group.all_floor_lamp_switches
 
 - id: 'switchoff1800'
   alias: Switch Off At 1800
@@ -104,22 +120,6 @@
     data:
       entity_id:
       - group.all_screen_switches
-      - group.all_floor_lamp_switches
-
-- id: 'switchon0700'
-  alias: Switch On At 0700
-  trigger:
-  - platform: time
-    at: '7:00:00'
-  condition:
-  - condition: state
-    entity_id: 'binary_sensor.workday_sensor_be'
-    state: 'on'
-  action:
-  - service: switch.turn_on
-    data:
-      entity_id:
-      - switch.mystrom006
       - group.all_floor_lamp_switches
 
 - id: 'projectoron'
