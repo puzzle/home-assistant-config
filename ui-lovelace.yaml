@@ -8,6 +8,10 @@ views:
         name: Fyrabebier Timer
     cards:
       - entities:
+          - entity: switch.shelly_1pm_b9849d
+            name: Coffee Machine
+            icon: 'mdi:coffee'
+            state_color: true
           - entity: light.lvl3_bar
             icon: 'mdi:ceiling-light'
             name: Lights
@@ -153,6 +157,11 @@ views:
         name: Lvl3 Tux Meeting Room Floor Lamp Back
         icon: mdi:floor-lamp
         graph: line
+      - entity: sensor.shelly_1pm_b9849d_power
+        graph: line
+        icon: 'mdi:coffee'
+        name: Lvl3 Bar Coffee Machine
+        type: sensor
     icon: 'mdi:gauge'
     path: power
     title: Power

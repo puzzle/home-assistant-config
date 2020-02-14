@@ -34,3 +34,9 @@
 - platform: mystrom
   host: 10.14.1.12
   name: mystrom012
+- platform: rest
+  name: "Shelly 1PM B9849D"
+  resource: http://10.14.0.100/relay/0
+  body_on: 'turn=on'
+  body_off: 'turn=off'
+  is_on_template: '{{ value_json.ison == true }}'

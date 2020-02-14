@@ -75,6 +75,21 @@
   - entity_id: light.lvl3_bar
     service: light.turn_on
 
+- id: 'switchon0640'
+  alias: Switch On At 0640
+  trigger:
+  - platform: time
+    at: '6:40:00'
+  condition:
+  - condition: state
+    entity_id: 'binary_sensor.workday_sensor_be'
+    state: 'on'
+  action:
+  - service: switch.turn_on
+    data:
+      entity_id:
+      - switch.shelly_1pm_b9849d
+
 - id: 'switchon0700'
   alias: Switch On At 0700
   trigger:
@@ -121,6 +136,21 @@
       entity_id:
       - group.all_screen_switches
       - group.all_floor_lamp_switches
+
+- id: 'switchoff1900'
+  alias: Switch Off At 1900
+  trigger:
+  - platform: time
+    at: '19:00:00'
+  condition:
+  - condition: state
+    entity_id: 'binary_sensor.workday_sensor_be'
+    state: 'on'
+  action:
+  - service: switch.turn_off
+    data:
+      entity_id:
+      - switch.shelly_1pm_b9849d
 
 - id: 'projectoron'
   alias: Projector On

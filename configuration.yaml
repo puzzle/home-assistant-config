@@ -17,9 +17,6 @@ config:
 history:
 logbook:
 
-updater:
-  reporting: false
-
 counter:
   fyrabebier:
     initial: 1
