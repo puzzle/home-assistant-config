@@ -1,1 +1,5 @@
-{}
+'update_home_assistant':
+  alias: Update Home Assistant
+  sequence:
+  - service: shell_command.config_update
+  - service: homeassistant.restart
