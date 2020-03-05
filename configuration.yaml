@@ -9,9 +9,6 @@ homeassistant:
 lovelace:
   mode: yaml
 
-http:
-  base_url: assistant.puzzle.ch
-
 frontend:
 config:
 history:
