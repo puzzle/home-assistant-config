@@ -1,1 +1,0 @@
-config_update: 'git -C /config pull origin master'

@@ -1,9 +1,3 @@
-'update_home_assistant':
-  alias: Update Home Assistant
-  sequence:
-  - service: shell_command.config_update
-  - service: homeassistant.restart
-
 'notify_remote_fyrabebier':
   alias: Remote Fyrabebier Notifications
   sequence:

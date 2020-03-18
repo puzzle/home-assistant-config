@@ -6,8 +6,6 @@ views:
         name: Fyrabebier Counter
       - entity: timer.fyrabe
         name: Fyrabebier Timer
-      - entity: binary_sensor.shelly_1pm_b9849d_update
-        name: Shelly 1PM B9849D Update
     cards:
       - entities:
           - entity: switch.shelly_1pm_b9849d
@@ -94,15 +92,6 @@ views:
         show_header_toggle: false
         title: Lvl-1 /dev/tre Office
         type: entities
-      - type: conditional
-        conditions:
-        - entity: binary_sensor.binary_command_sensor
-          state: "on"
-        card:
-          type: entities
-        entities:
-        - entity: script.update_home_assistant
-          name: Update Home Assistant
     icon: 'mdi:home-assistant'
     path: default_view
     title: Home
