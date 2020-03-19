@@ -10,3 +10,9 @@
   - service: notify.twitter_fyrabe
     data:
       message: 'Es git Bier im Hangouts 🍻 #{{ states(''counter.fyrabebier'') }}'
+'notify_remote_kafipouse':
+  alias: Remote Kafipouse Notifications
+  sequence:
+  - service: notify.rocketchat_kafipouse
+    data:
+      message: 'Es git Kafi im [Hangouts](https://meet.google.com/adz-vcom-dpa) :coffee:'

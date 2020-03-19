@@ -5,6 +5,12 @@
   password: !secret rocketchat_password
   room: fyrabe
 - platform: rocketchat
+  name: rocketchat_kafipouse
+  url: !secret rocketchat_url
+  username: !secret rocketchat_username
+  password: !secret rocketchat_password
+  room: kafipouse
+- platform: rocketchat
   name: rocketchat_3ddruck
   url: !secret rocketchat_url
   username: !secret rocketchat_username
