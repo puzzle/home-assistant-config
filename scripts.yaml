@@ -1,15 +1,22 @@
 'notify_remote_fyrabebier':
   alias: Remote Fyrabebier Notifications
   sequence:
-  - service: counter.increment
-    data:
-      entity_id: counter.fyrabebier
   - service: notify.rocketchat_fyrabe
     data:
       message: 'Es git Bier im [Hangouts](https://meet.google.com/adz-vcom-dpa) :beers:'
+  - condition: state
+    entity_id: timer.remote_fyrabe
+    state: idle
+  - service: counter.increment
+    data:
+      entity_id: counter.fyrabebier
+  - service: timer.start
+    data:
+      entity_id: timer.remote_fyrabe
   - service: notify.twitter_fyrabe
     data:
       message: 'Es git Bier im Hangouts 🍻 #{{ states(''counter.fyrabebier'') }}'
+
 'notify_remote_kafipouse':
   alias: Remote Kafipouse Notifications
   sequence:

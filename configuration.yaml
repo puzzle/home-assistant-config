@@ -21,6 +21,8 @@ counter:
 timer:
   fyrabe:
     duration: '01:00:00'
+  remote_fyrabe:
+    duration: '01:00:00'
 
 google:
   client_id: !secret google_client_id
