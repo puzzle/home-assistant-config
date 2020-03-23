@@ -6,6 +6,8 @@ views:
         name: Fyrabebier Counter
       - entity: timer.fyrabe
         name: Fyrabebier Timer
+      - entity: timer.remote_fyrabe
+        name: Remote Fyrabebier Timer
     cards:
       - entities:
           - entity: switch.shelly_1pm_b9849d
