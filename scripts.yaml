@@ -1,25 +1,24 @@
-'notify_remote_fyrabebier':
+notify_remote_fyrabebier:
   alias: Remote Fyrabebier Notifications
   sequence:
-  - service: notify.rocketchat_fyrabe
-    data:
-      message: 'Es git Bier im [Hangouts](https://meet.google.com/adz-vcom-dpa) :beers:'
+  - data:
+      message: 'Es git Bier im [Jitsi](https://meet.puzzle.ch/fyrabebier) :beers:'
+    service: notify.rocketchat_fyrabe
   - condition: state
     entity_id: timer.remote_fyrabe
     state: idle
-  - service: counter.increment
-    data:
+  - data:
       entity_id: counter.fyrabebier
-  - service: timer.start
-    data:
+    service: counter.increment
+  - data:
       entity_id: timer.remote_fyrabe
-  - service: notify.twitter_fyrabe
-    data:
-      message: 'Es git Bier im Hangouts 🍻 #{{ states(''counter.fyrabebier'') }}'
-
-'notify_remote_kafipouse':
+    service: timer.start
+  - data:
+      message: 'Es git Bier im Jitsi 🍻 #{{ states(''counter.fyrabebier'') }}'
+    service: notify.twitter_fyrabe
+notify_remote_kafipouse:
   alias: Remote Kafipouse Notifications
   sequence:
-  - service: notify.rocketchat_kafipouse
-    data:
-      message: 'Es git Kafi im [Hangouts](https://meet.google.com/adz-vcom-dpa) :coffee:'
+  - data:
+      message: 'Es git Kafi im [Jitsi](https://meet.puzzle.ch/fyrabebier) :coffee:'
+    service: notify.rocketchat_kafipouse
