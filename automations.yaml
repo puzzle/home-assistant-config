@@ -104,6 +104,7 @@
     data:
       entity_id:
       - switch.mystrom006
+      - switch.mystrom013
 
 - id: 'switchon0745'
   alias: Switch On At 0745
@@ -120,6 +121,36 @@
       entity_id:
       - group.all_screen_switches
       - group.all_floor_lamp_switches
+
+- id: 'switchon2345'
+  alias: Switch On At 2345
+  trigger:
+  - platform: time
+    at: '23:45:00'
+  condition:
+  - condition: state
+    entity_id: 'binary_sensor.workday_sensor_be'
+    state: 'on'
+  action:
+  - service: switch.turn_on
+    data:
+      entity_id:
+      - switch.mystrom013
+
+- id: 'switchoff0100'
+  alias: Switch Off At 0100
+  trigger:
+  - platform: time
+    at: '01:00:00'
+  condition:
+  - condition: state
+    entity_id: 'binary_sensor.workday_sensor_be'
+    state: 'on'
+  action:
+  - service: switch.turn_off
+    data:
+      entity_id:
+      - switch.mystrom013
 
 - id: 'switchoff1800'
   alias: Switch Off At 1800
@@ -151,6 +182,21 @@
     data:
       entity_id:
       - switch.shelly_1pm_b9849d
+
+- id: 'switchoff2000'
+  alias: Switch Off At 2000
+  trigger:
+  - platform: time
+    at: '20:00:00'
+  condition:
+  - condition: state
+    entity_id: 'binary_sensor.workday_sensor_be'
+    state: 'on'
+  action:
+  - service: switch.turn_off
+    data:
+      entity_id:
+      - switch.mystrom013
 
 - id: 'projectoron'
   alias: Projector On

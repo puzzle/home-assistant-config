@@ -34,6 +34,9 @@
 - platform: mystrom
   host: 10.14.1.12
   name: mystrom012
+- platform: mystrom
+  host: 10.14.1.13
+  name: mystrom013
 - platform: rest
   name: "Shelly 1PM B9849D"
   resource: http://10.14.0.100/relay/0
