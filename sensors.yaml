@@ -48,6 +48,10 @@
       friendly_name: "Current Power"
       unit_of_measurement: "W"
       value_template: "{{ state_attr('switch.mystrom012', 'current_power_w') }}"
+    mystrom013:
+      friendly_name: "Current Power"
+      unit_of_measurement: "W"
+      value_template: "{{ state_attr('switch.mystrom013', 'current_power_w') }}"
 - platform: rest
   resource: http://10.14.0.100/status
   name: "Shelly 1PM B9849D Power"

@@ -83,6 +83,14 @@ views:
         title: Lvl3 Tux Meeting Room
         type: entities
       - entities:
+          - entity: switch.mystrom013
+            icon: 'mdi:projector'
+            name: Projector
+            state_color: true
+        show_header_toggle: false
+        title: Lvl3 Container Meeting Room
+        type: entities
+      - entities:
           - entity: switch.mystrom007
             icon: 'mdi:television'
             name: Screen Front
@@ -158,6 +166,11 @@ views:
         entity: sensor.mystrom012
         name: Lvl3 Tux Meeting Room Floor Lamp Back
         icon: mdi:floor-lamp
+        graph: line
+      - type: sensor
+        entity: sensor.mystrom013
+        name: Lvl3 Container Meeting Room Projector
+        icon: mdi:projextor
         graph: line
       - entity: sensor.shelly_1pm_b9849d_power
         graph: line
