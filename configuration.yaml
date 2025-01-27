@@ -1,3 +1,25 @@
+# Loads default set of integrations. Do not remove.
+default_config:
+
+# Text to speech
+tts:
+  - platform: google_translate
+
+http:
+  cors_allowed_origins:
+    - assistant.puzzle.ch
+  use_x_forwarded_for: true
+  trusted_proxies:
+    - 127.0.0.1
+    - 10.11.5.223
+    - 10.10.245.55
+
+logger:
+  default: info
+  logs:
+    aioshelly: debug
+    homeassistant.components.shelly: debug
+
 homeassistant:
   name: Puzzle
   latitude: 46.94354
@@ -23,10 +45,6 @@ timer:
     duration: '01:00:00'
   remote_fyrabe:
     duration: '01:00:00'
-
-google:
-  client_id: !secret google_client_id
-  client_secret: !secret google_client_secret
 
 hue:
   bridges:
