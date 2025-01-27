@@ -1,12 +1,13 @@
-- id: '1574785708776'
+- id: '1668500610962'
   alias: Fyrabebier Notifications
   description: ''
   trigger:
-  - device_id: 623d7c88d388467fb678cc026a1907e8
-    domain: binary_sensor
-    entity_id: binary_sensor.beer_button
-    platform: device
-    type: turned_on
+    - type: turned_on
+      platform: device
+      device_id: 9a39123cfa57a01a4e9ba2e31390588e
+      entity_id: binary_sensor.beer_button
+      domain: binary_sensor
+  mode: single
   condition:
   - condition: state
     entity_id: timer.fyrabe
@@ -20,78 +21,139 @@
       message: 'Es git Bier ar Bäupstrass :beers:'
     service: notify.rocketchat_fyrabe
   - data:
-      message: 'Es git Bier ar Bäupstrass 🍻 #{{ states(''counter.fyrabebier'') }}'
-    service: notify.twitter_fyrabe
-  - data:
       entity_id: timer.fyrabe
     service: timer.start
-
-- id: '1576084756618'
-  alias: Bar Lights On
-  description: ''
-  trigger:
-  - entity_id: binary_sensor.lvl3_bar_sensor_motion
-    platform: state
-    to: 'on'
-  condition: []
-  action:
-  - data:
+  - service: light.turn_off
+    data: { }
+    target:
+      entity_id: light.bar_lights
+  - service: switch.turn_on
+    data: { }
+    target:
+      entity_id: switch.carousel
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 8
+      milliseconds: 69
+  - service: switch.turn_off
+    data: { }
+    target:
+      entity_id: switch.carousel
+  - service: hue.hue_activate_scene
+    data:
       group_name: Lvl3 Bar
       scene_name: Normal
-    service: hue.hue_activate_scene
+
+- id: '1666944706296'
+  alias: Bar Lights On
+  description: ''
+  mode: single
+  trigger:
+    - type: motion
+      platform: device
+      device_id: 66febc62d3a450a0359f82adfe3ebb98
+      entity_id: binary_sensor.lvl3_bar_sensor_motion
+      domain: binary_sensor
+      for:
+        hours: 0
+        minutes: 0
+        seconds: 0
+  condition: []
+  action:
+    - service: hue.hue_activate_scene
+      data:
+        group_name: Lvl3 Bar
+        scene_name: Normal
+    - if:
+        - type: is_no_motion
+          condition: device
+          device_id: 66febc62d3a450a0359f82adfe3ebb98
+          entity_id: binary_sensor.lvl3_bar_sensor_motion
+          domain: binary_sensor
+          for:
+            hours: 0
+            minutes: 10
+            seconds: 0
+      then:
+        - service: light.turn_off
+          data: { }
+          target:
+            entity_id: light.bar_lights
     
-- id: '1576084854156'
+- id: '1668095014044'
   alias: Bar Lights Off
   description: ''
   trigger:
-  - entity_id: binary_sensor.lvl3_bar_sensor_motion
-    for: 0:10:00
-    platform: state
-    to: 'off'
+    - type: no_motion
+      platform: device
+      device_id: 66febc62d3a450a0359f82adfe3ebb98
+      entity_id: binary_sensor.lvl3_bar_sensor_motion
+      domain: binary_sensor
+      for:
+        hours: 0
+        minutes: 20
+        seconds: 0
   condition: []
   action:
-  - data:
-      entity_id: light.lvl3_bar
-    service: light.turn_off
+    - service: light.turn_off
+      data: { }
+      target:
+        entity_id: light.bar_lights
+  mode: single
 
-- id: '1576853829501'
+- id: '1668500610962'
   alias: Fyrabebier Signalisation
-  description: ''
+  description: Beerled Flash
   trigger:
-  - device_id: 8894cf2f455b491d9b1df00a9da0fc31
-    domain: binary_sensor
-    entity_id: binary_sensor.beer_button
-    platform: device
-    type: turned_on
+    - type: turned_on
+      platform: device
+      device_id: 9a39123cfa57a01a4e9ba2e31390588e
+      entity_id: binary_sensor.beer_button
+      domain: binary_sensor
   condition: []
   action:
-  - entity_id: light.lvl3_bar
-    service: light.turn_off
-  - entity_id: switch.carousel
-    service: switch.turn_on
-  - delay: 00:00:03
-  - entity_id: switch.carousel
-    service: switch.turn_off
-  - entity_id: light.lvl3_bar
-    service: light.turn_on
+    - service: light.turn_off
+      data: { }
+      target:
+        entity_id: light.bar_lights
+    - service: switch.turn_on
+      data: { }
+      target:
+        entity_id: switch.carousel
+    - delay:
+        hours: 0
+        minutes: 0
+        seconds: 8
+        milliseconds: 69
+    - service: switch.turn_off
+      data: { }
+      target:
+        entity_id: switch.carousel
+    - service: hue.hue_activate_scene
+      data:
+        group_name: Lvl3 Bar
+        scene_name: Normal
+  mode: single
 
-- id: 'switchon0640'
-  alias: Switch On At 0640
+- id: '1663767814646'
+  alias: switch_on_weekday_0600
   trigger:
   - platform: time
-    at: '6:40:00'
+    at: 05:30:00
   condition:
   - condition: state
     entity_id: 'binary_sensor.workday_sensor_be'
     state: 'on'
   action:
-  - service: switch.turn_on
-    data:
-      entity_id:
-      - switch.shelly_1pm_b9849d
+    - type: turn_on
+      device_id: 28f9efccc8e7ef0d0ad204e0687530a8
+      entity_id: cabeeda96667211cbdaddda2dab270a2
+      domain: switch
 
-- id: 'switchon0700'
-  alias: Switch On At 0700
+- id: '1663768039364'
+  alias: switch_on_weekdays_0700
+  description: Collection of stuff we want to trigger on 7AM Weekdays
   trigger:
   - platform: time
     at: '7:00:00'
@@ -99,14 +161,11 @@
   - condition: state
     entity_id: 'binary_sensor.workday_sensor_be'
     state: 'on'
-  action:
-  - service: switch.turn_on
-    data:
-      entity_id:
-      - switch.mystrom006
+  action: []
 
-- id: 'switchon0745'
+- id: '1663769479830'
   alias: Switch On At 0745
+  description: Collection of stuff we want to trigger on 7:45AM Weekdays
   trigger:
   - platform: time
     at: '7:45:00'
@@ -115,88 +174,174 @@
     entity_id: 'binary_sensor.workday_sensor_be'
     state: 'on'
   action:
-  - service: switch.turn_on
-    data:
-      entity_id:
-      - group.all_screen_switches
-      - group.all_floor_lamp_switches
+    - service: switch.turn_on
+      data: {}
+      target:
+        entity_id: switch.screen_switches
 
-- id: 'switchoff1800'
+- id: '1663768093844'
   alias: Switch Off At 1800
+  description: Collection of stuff we want to trigger on 6PM Weekdays
   trigger:
   - platform: time
     at: '18:00:00'
-  condition:
-  - condition: state
-    entity_id: 'binary_sensor.workday_sensor_be'
-    state: 'on'
-  action:
-  - service: switch.turn_off
-    data:
-      entity_id:
-      - group.all_screen_switches
-      - group.all_floor_lamp_switches
+  condition: []
+  action: []
 
-- id: 'switchoff1900'
+- id: '1663769258732'
   alias: Switch Off At 1900
+  description: Collection of stuff we want to trigger on 7PM Weekdays
   trigger:
   - platform: time
     at: '19:00:00'
-  condition:
-  - condition: state
-    entity_id: 'binary_sensor.workday_sensor_be'
-    state: 'on'
-  action:
-  - service: switch.turn_off
-    data:
-      entity_id:
-      - switch.shelly_1pm_b9849d
-
-- id: 'projectoron'
-  alias: Projector On
-  description: ''
-  trigger:
-  - above: '20'
-    entity_id: sensor.mystrom009
-    platform: numeric_state
   condition: []
   action:
-  - entity_id: switch.mystrom010
-    service: switch.turn_off
+    - service: switch.turn_off
+      data: { }
+      target:
+        entity_id:
+          - switch.floor_lamp
+          - switch.screen_switches
+    - type: turn_off
+      device_id: 28f9efccc8e7ef0d0ad204e0687530a8
+      entity_id: cabeeda96667211cbdaddda2dab270a2
+      domain: switch
 
-- id: 'projectoroff'
-  alias: Projector Off
+#- id: 'projectoron'
+#  alias: Projector On
+#  description: ''
+#  trigger:
+#  - above: '20'
+#    entity_id: sensor.mystrom009
+#    platform: numeric_state
+#  condition: []
+#  action:
+#  - entity_id: switch.mystrom010
+#    service: switch.turn_off
+
+#- id: 'projectoroff'
+#  alias: Projector Off
+#  description: ''
+#  trigger:
+#  - below: '20'
+#    entity_id: sensor.mystrom009
+#    platform: numeric_state
+#  - entity_id: sensor.mystrom009
+#    platform: state
+#    to: 'None'
+#  condition: []
+#  action:
+#  - entity_id: switch.mystrom010
+#    service: switch.turn_on
+
+#- id: 'octoprintstart'
+#  alias: Octoprint Start Printing Notification
+#  trigger:
+#  - platform: state
+#    entity_id: binary_sensor.octoprint_printing
+#    to: 'true'
+#  action:
+#  - service: notify.rocketchat_3ddruck
+#    data_template:
+#      message: "3D-Printer started printing. Time remaining: {{ sensor.octoprint_time_remaining }}"
+
+#- id: 'octoprintstop'
+#  alias: Octoprint Stop Printing Notification
+#  trigger:
+#  - platform: state
+#    entity_id: binary_sensor.octoprint_printing
+#    to: 'false'
+#  action:
+#  - service: notify.rocketchat_3ddruck
+#    data_template:
+#      message: "3D-Printer stopped printing..."
+
+- id: '1666944706296'
+  alias: Bar Lights On
   description: ''
   trigger:
-  - below: '20'
-    entity_id: sensor.mystrom009
-    platform: numeric_state
-  - entity_id: sensor.mystrom009
-    platform: state              
-    to: 'None'
+    - type: motion
+      platform: device
+      device_id: 66febc62d3a450a0359f82adfe3ebb98
+      entity_id: binary_sensor.lvl3_bar_sensor_motion
+      domain: binary_sensor
+      for:
+        hours: 0
+        minutes: 0
+        seconds: 0
   condition: []
   action:
-  - entity_id: switch.mystrom010
-    service: switch.turn_on
+    - service: hue.hue_activate_scene
+      data:
+        group_name: Lvl3 Bar
+        scene_name: Normal
+    - if:
+        - type: is_no_motion
+          condition: device
+          device_id: 66febc62d3a450a0359f82adfe3ebb98
+          entity_id: binary_sensor.lvl3_bar_sensor_motion
+          domain: binary_sensor
+          for:
+            hours: 0
+            minutes: 10
+            seconds: 0
+      then:
+        - service: light.turn_off
+          data: {}
+          target:
+            entity_id: light.bar_lights
+  mode: single
 
-- id: 'octoprintstart'
-  alias: Octoprint Start Printing Notification
+- id: '1668095014044'
+  alias: Bar Lights Off
+  description: ''
   trigger:
-  - platform: state
-    entity_id: binary_sensor.octoprint_printing
-    to: 'true'
+    - type: no_motion
+      platform: device
+      device_id: 66febc62d3a450a0359f82adfe3ebb98
+      entity_id: binary_sensor.lvl3_bar_sensor_motion
+      domain: binary_sensor
+      for:
+        hours: 0
+        minutes: 20
+        seconds: 0
+  condition: []
   action:
-  - service: notify.rocketchat_3ddruck
-    data_template:
-      message: "3D-Printer started printing. Time remaining: {{ sensor.octoprint_time_remaining }}"
-
-- id: 'octoprintstop'
-  alias: Octoprint Stop Printing Notification
+    - service: light.turn_off
+      data: {}
+      target:
+        entity_id: light.bar_lights
+  mode: single
+- id: '1668500610962'
+  alias: Fyrabebier Signalisation
+  description: Beerled Flash
   trigger:
-  - platform: state
-    entity_id: binary_sensor.octoprint_printing
-    to: 'false'
+    - type: turned_on
+      platform: device
+      device_id: 9a39123cfa57a01a4e9ba2e31390588e
+      entity_id: binary_sensor.beer_button
+      domain: binary_sensor
+  condition: []
   action:
-  - service: notify.rocketchat_3ddruck
-    data_template:
-      message: "3D-Printer stopped printing..."
+    - service: light.turn_off
+      data: {}
+      target:
+        entity_id: light.bar_lights
+    - service: switch.turn_on
+      data: {}
+      target:
+        entity_id: switch.carousel
+    - delay:
+        hours: 0
+        minutes: 0
+        seconds: 8
+        milliseconds: 69
+    - service: switch.turn_off
+      data: {}
+      target:
+        entity_id: switch.carousel
+    - service: hue.hue_activate_scene
+      data:
+        group_name: Lvl3 Bar
+        scene_name: Normal
+  mode: single
