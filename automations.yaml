@@ -1,347 +1,197 @@
-- id: '1668500610962'
-  alias: Fyrabebier Notifications
-  description: ''
-  trigger:
-    - type: turned_on
-      platform: device
-      device_id: 9a39123cfa57a01a4e9ba2e31390588e
-      entity_id: binary_sensor.beer_button
-      domain: binary_sensor
-  mode: single
-  condition:
-  - condition: state
-    entity_id: timer.fyrabe
-    state: idle
-  action:
-  - data:
-      entity_id: counter.fyrabebier
-    service: counter.increment
-  - alias: ''
-    data:
-      message: 'Es git Bier ar Bäupstrass :beers:'
-    service: notify.rocketchat_fyrabe
-  - data:
-      entity_id: timer.fyrabe
-    service: timer.start
-  - service: light.turn_off
-    data: { }
-    target:
-      entity_id: light.bar_lights
-  - service: switch.turn_on
-    data: { }
-    target:
-      entity_id: switch.carousel
-  - delay:
-      hours: 0
-      minutes: 0
-      seconds: 8
-      milliseconds: 69
-  - service: switch.turn_off
-    data: { }
-    target:
-      entity_id: switch.carousel
-  - service: hue.hue_activate_scene
-    data:
-      group_name: Lvl3 Bar
-      scene_name: Normal
-
-- id: '1666944706296'
-  alias: Bar Lights On
-  description: ''
-  mode: single
-  trigger:
-    - type: motion
-      platform: device
-      device_id: 66febc62d3a450a0359f82adfe3ebb98
-      entity_id: binary_sensor.lvl3_bar_sensor_motion
-      domain: binary_sensor
-      for:
-        hours: 0
-        minutes: 0
-        seconds: 0
-  condition: []
-  action:
-    - service: hue.hue_activate_scene
-      data:
-        group_name: Lvl3 Bar
-        scene_name: Normal
-    - if:
-        - type: is_no_motion
-          condition: device
-          device_id: 66febc62d3a450a0359f82adfe3ebb98
-          entity_id: binary_sensor.lvl3_bar_sensor_motion
-          domain: binary_sensor
-          for:
-            hours: 0
-            minutes: 10
-            seconds: 0
-      then:
-        - service: light.turn_off
-          data: { }
-          target:
-            entity_id: light.bar_lights
-    
-- id: '1668095014044'
-  alias: Bar Lights Off
-  description: ''
-  trigger:
-    - type: no_motion
-      platform: device
-      device_id: 66febc62d3a450a0359f82adfe3ebb98
-      entity_id: binary_sensor.lvl3_bar_sensor_motion
-      domain: binary_sensor
-      for:
-        hours: 0
-        minutes: 20
-        seconds: 0
-  condition: []
-  action:
-    - service: light.turn_off
-      data: { }
-      target:
-        entity_id: light.bar_lights
-  mode: single
-
-- id: '1668500610962'
-  alias: Fyrabebier Signalisation
-  description: Beerled Flash
-  trigger:
-    - type: turned_on
-      platform: device
-      device_id: 9a39123cfa57a01a4e9ba2e31390588e
-      entity_id: binary_sensor.beer_button
-      domain: binary_sensor
-  condition: []
-  action:
-    - service: light.turn_off
-      data: { }
-      target:
-        entity_id: light.bar_lights
-    - service: switch.turn_on
-      data: { }
-      target:
-        entity_id: switch.carousel
-    - delay:
-        hours: 0
-        minutes: 0
-        seconds: 8
-        milliseconds: 69
-    - service: switch.turn_off
-      data: { }
-      target:
-        entity_id: switch.carousel
-    - service: hue.hue_activate_scene
-      data:
-        group_name: Lvl3 Bar
-        scene_name: Normal
-  mode: single
-
-- id: '1663767814646'
-  alias: switch_on_weekday_0600
-  trigger:
-  - platform: time
-    at: 05:30:00
-  condition:
-  - condition: state
-    entity_id: 'binary_sensor.workday_sensor_be'
-    state: 'on'
-  action:
-    - type: turn_on
-      device_id: 28f9efccc8e7ef0d0ad204e0687530a8
-      entity_id: cabeeda96667211cbdaddda2dab270a2
+- id: '1738240615761'
+  alias: Give moar Coffee
+  description: Normally the coffee machine turns off at night. this might not always
+    be the best thing. this automation allows users to turn the machine on for 90
+    minutes without them having access to the full HA UI
+  triggers:
+    - trigger: webhook
+      allowed_methods:
+        - POST
+        - PUT
+        - GET
+      local_only: false
+      webhook_id: moar-coffee
+  conditions:
+    - condition: device
+      type: is_off
+      device_id: 12f7c3043875c7e61a21fb4ee0a40c0f
+      entity_id: c624beebae9e744ddfe8c6caa941b225
       domain: switch
-
-- id: '1663768039364'
-  alias: switch_on_weekdays_0700
-  description: Collection of stuff we want to trigger on 7AM Weekdays
-  trigger:
-  - platform: time
-    at: '7:00:00'
-  condition:
-  - condition: state
-    entity_id: 'binary_sensor.workday_sensor_be'
-    state: 'on'
-  action: []
-
-- id: '1663769479830'
-  alias: Switch On At 0745
-  description: Collection of stuff we want to trigger on 7:45AM Weekdays
-  trigger:
-  - platform: time
-    at: '7:45:00'
-  condition:
-  - condition: state
-    entity_id: 'binary_sensor.workday_sensor_be'
-    state: 'on'
-  action:
-    - service: switch.turn_on
+  actions:
+    - action: switch.turn_on
+      metadata: {}
       data: {}
       target:
-        entity_id: switch.screen_switches
-
-- id: '1663768093844'
-  alias: Switch Off At 1800
-  description: Collection of stuff we want to trigger on 6PM Weekdays
-  trigger:
-  - platform: time
-    at: '18:00:00'
-  condition: []
-  action: []
-
-- id: '1663769258732'
-  alias: Switch Off At 1900
-  description: Collection of stuff we want to trigger on 7PM Weekdays
-  trigger:
-  - platform: time
-    at: '19:00:00'
-  condition: []
-  action:
-    - service: switch.turn_off
-      data: { }
+        entity_id: switch.shellyplus1pm_a8032abbb744_switch_0
+    - delay:
+        hours: 1
+        minutes: 30
+        seconds: 0
+    - action: switch.turn_off
+      metadata: {}
+      data: {}
+      target:
+        entity_id: switch.shellyplus1pm_a8032abbb744_switch_0
+  mode: restart
+- id: '1738241096739'
+  alias: Dim the bar lights if nothing happens
+  description: ''
+  triggers:
+    - trigger: state
+      entity_id:
+        - binary_sensor.lvl3_bar_sensor_motion
+      to: 'off'
+      for:
+        hours: 0
+        minutes: 5
+        seconds: 0
+      from: 'on'
+  conditions:
+    - condition: state
+      entity_id: light.bar_lights
+      state: 'on'
+  actions:
+    - choose:
+        - conditions:
+            - condition: state
+              entity_id: binary_sensor.working_hours_long
+              state: 'on'
+          sequence:
+            - action: light.turn_off
+              metadata: {}
+              data: {}
+              target:
+                entity_id: light.bar_lights
+      default:
+        - action: scene.turn_on
+          metadata: {}
+          data:
+            transition: 11
+          target:
+            entity_id: scene.bar_bright
+  mode: single
+- id: '1738241879873'
+  alias: Turn on the bar light if people are there
+  description: ''
+  triggers:
+    - trigger: state
+      entity_id:
+        - binary_sensor.lvl3_bar_sensor_motion
+      from: 'off'
+      to: 'on'
+  conditions: []
+  actions:
+    - action: scene.turn_on
+      metadata: {}
+      data:
+        transition: 3
+      target:
+        entity_id: scene.bar_bright_2
+  mode: single
+- id: '1738242286665'
+  alias: Preheat the coffee machine in the morning
+  description: ''
+  triggers:
+    - trigger: time
+      at: 05:30:00
+  conditions:
+    - condition: state
+      entity_id: binary_sensor.warchtig
+      state: 'on'
+  actions:
+    - action: switch.turn_on
+      metadata: {}
+      data: {}
+      target:
+        entity_id: switch.shellyplus1pm_a8032abbb744_switch_0
+  mode: single
+- id: '1738242373475'
+  alias: Turn stuff off at 2200
+  description: ''
+  triggers:
+    - trigger: time
+      at: '22:00:00'
+  conditions: []
+  actions:
+    - action: switch.turn_off
+      metadata: {}
+      data: {}
       target:
         entity_id:
-          - switch.floor_lamp
-          - switch.screen_switches
-    - type: turn_off
-      device_id: 28f9efccc8e7ef0d0ad204e0687530a8
-      entity_id: cabeeda96667211cbdaddda2dab270a2
-      domain: switch
-
-#- id: 'projectoron'
-#  alias: Projector On
-#  description: ''
-#  trigger:
-#  - above: '20'
-#    entity_id: sensor.mystrom009
-#    platform: numeric_state
-#  condition: []
-#  action:
-#  - entity_id: switch.mystrom010
-#    service: switch.turn_off
-
-#- id: 'projectoroff'
-#  alias: Projector Off
-#  description: ''
-#  trigger:
-#  - below: '20'
-#    entity_id: sensor.mystrom009
-#    platform: numeric_state
-#  - entity_id: sensor.mystrom009
-#    platform: state
-#    to: 'None'
-#  condition: []
-#  action:
-#  - entity_id: switch.mystrom010
-#    service: switch.turn_on
-
-#- id: 'octoprintstart'
-#  alias: Octoprint Start Printing Notification
-#  trigger:
-#  - platform: state
-#    entity_id: binary_sensor.octoprint_printing
-#    to: 'true'
-#  action:
-#  - service: notify.rocketchat_3ddruck
-#    data_template:
-#      message: "3D-Printer started printing. Time remaining: {{ sensor.octoprint_time_remaining }}"
-
-#- id: 'octoprintstop'
-#  alias: Octoprint Stop Printing Notification
-#  trigger:
-#  - platform: state
-#    entity_id: binary_sensor.octoprint_printing
-#    to: 'false'
-#  action:
-#  - service: notify.rocketchat_3ddruck
-#    data_template:
-#      message: "3D-Printer stopped printing..."
-
-- id: '1666944706296'
-  alias: Bar Lights On
-  description: ''
-  trigger:
-    - type: motion
-      platform: device
-      device_id: 66febc62d3a450a0359f82adfe3ebb98
-      entity_id: binary_sensor.lvl3_bar_sensor_motion
-      domain: binary_sensor
-      for:
-        hours: 0
-        minutes: 0
-        seconds: 0
-  condition: []
-  action:
-    - service: hue.hue_activate_scene
-      data:
-        group_name: Lvl3 Bar
-        scene_name: Normal
-    - if:
-        - type: is_no_motion
-          condition: device
-          device_id: 66febc62d3a450a0359f82adfe3ebb98
-          entity_id: binary_sensor.lvl3_bar_sensor_motion
-          domain: binary_sensor
-          for:
-            hours: 0
-            minutes: 10
-            seconds: 0
-      then:
-        - service: light.turn_off
-          data: {}
-          target:
-            entity_id: light.bar_lights
+          - switch.screens
+          - switch.shellyplus1pm_a8032abbb744_switch_0
+          - switch.lampe_insel_4
   mode: single
-
-- id: '1668095014044'
-  alias: Bar Lights Off
+- id: '1738242436510'
+  alias: Turn stuff on in the morning
   description: ''
-  trigger:
-    - type: no_motion
-      platform: device
-      device_id: 66febc62d3a450a0359f82adfe3ebb98
-      entity_id: binary_sensor.lvl3_bar_sensor_motion
-      domain: binary_sensor
-      for:
-        hours: 0
-        minutes: 20
-        seconds: 0
-  condition: []
-  action:
-    - service: light.turn_off
+  triggers:
+    - trigger: state
+      entity_id:
+        - binary_sensor.working_hours_short
+      to: 'on'
+  conditions: []
+  actions:
+    - action: switch.turn_on
+      metadata: {}
       data: {}
       target:
-        entity_id: light.bar_lights
+        entity_id:
+          - switch.screens
+          - switch.shellyplus1pm_a8032abbb744_switch_0
+          - switch.lampe_insel_4
   mode: single
-- id: '1668500610962'
-  alias: Fyrabebier Signalisation
-  description: Beerled Flash
-  trigger:
-    - type: turned_on
-      platform: device
-      device_id: 9a39123cfa57a01a4e9ba2e31390588e
-      entity_id: binary_sensor.beer_button
-      domain: binary_sensor
-  condition: []
-  action:
-    - service: light.turn_off
+- id: '1738242523521'
+  alias: Turn stuff off in the evening
+  description: ''
+  triggers:
+    - trigger: state
+      entity_id:
+        - binary_sensor.working_hours_short
+      to: 'off'
+  conditions: []
+  actions:
+    - action: switch.turn_off
+      metadata: {}
       data: {}
       target:
-        entity_id: light.bar_lights
-    - service: switch.turn_on
+        entity_id: switch.screens
+  mode: single
+- id: '1738249712986'
+  alias: Toggle Insel 3 Lampe on Webhook
+  description: ''
+  triggers:
+    - trigger: webhook
+      allowed_methods:
+        - POST
+        - PUT
+        - GET
+      local_only: true
+      webhook_id: -PZhSAAVRpt7TmNkmUQoovCgf
+  conditions: []
+  actions:
+    - action: light.toggle
+      metadata: {}
       data: {}
       target:
-        entity_id: switch.carousel
-    - delay:
-        hours: 0
-        minutes: 0
-        seconds: 8
-        milliseconds: 69
-    - service: switch.turn_off
+        entity_id: light.lampe_insel_4
+  mode: single
+- id: '1738249770736'
+  alias: Toggle Insel 4 lights on webhook
+  description: ''
+  triggers:
+    - trigger: webhook
+      allowed_methods:
+        - POST
+        - PUT
+        - GET
+      local_only: true
+      webhook_id: -Rl0Fwyrlk84b7peLkzf66rVz
+  conditions: []
+  actions:
+    - action: light.toggle
+      metadata: {}
       data: {}
       target:
-        entity_id: switch.carousel
-    - service: hue.hue_activate_scene
-      data:
-        group_name: Lvl3 Bar
-        scene_name: Normal
+        entity_id: light.lampe_insel_4
   mode: single
