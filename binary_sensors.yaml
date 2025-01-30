@@ -1,8 +1,0 @@
-- platform: workday
-  name: Workday Sensor BE
-  country: CH
-  province: BE
-- platform: rest
-  resource: http://10.14.0.100/status
-  name: "Shelly 1PM B9849D Update"
-  value_template: '{{ value_json.has_update }}'

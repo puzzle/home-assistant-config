@@ -1,9 +1,10 @@
+
 # Loads default set of integrations. Do not remove.
 default_config:
 
-# Text to speech
-tts:
-  - platform: google_translate
+# Load frontend themes from the themes folder
+frontend:
+  themes: !include_dir_merge_named themes
 
 http:
   cors_allowed_origins:
@@ -14,55 +15,7 @@ http:
     - 10.11.5.223
     - 10.10.245.55
 
-logger:
-  default: info
-  logs:
-    aioshelly: debug
-    homeassistant.components.shelly: debug
 
-homeassistant:
-  name: Puzzle
-  latitude: 46.94354
-  longitude: 7.43259
-  elevation: 525
-  unit_system: metric
-  time_zone: Europe/Zurich
-
-lovelace:
-  mode: yaml
-
-frontend:
-config:
-history:
-logbook:
-
-counter:
-  fyrabebier:
-    initial: 0
-
-timer:
-  fyrabe:
-    duration: '01:00:00'
-  remote_fyrabe:
-    duration: '01:00:00'
-
-hue:
-  bridges:
-    - host: 10.14.0.7
-
-#octoprint:
-#  host: 10.14.1.20
-#  api_key: !secret octoprint_api_key
-#  bed: true
-
-#prometheus:
-#  namespace: homeassistant
-
-notify: !include notifiers.yaml
-binary_sensor: !include binary_sensors.yaml
-sensor: !include sensors.yaml
-switch: !include switches.yaml
-group: !include groups.yaml
 automation: !include automations.yaml
 script: !include scripts.yaml
 scene: !include scenes.yaml

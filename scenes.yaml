@@ -1,0 +1,250 @@
+- id: '1738240850080'
+  name: Bar dim
+  entities:
+    light.bar_light_1:
+      min_color_temp_kelvin: 2000
+      max_color_temp_kelvin: 6535
+      min_mireds: 153
+      max_mireds: 500
+      supported_color_modes:
+      - color_temp
+      color_mode: color_temp
+      brightness: 23
+      color_temp_kelvin: 2398
+      color_temp: 417
+      hs_color:
+      - 29.157
+      - 76.348
+      rgb_color:
+      - 255
+      - 155
+      - 60
+      xy_color:
+      - 0.557
+      - 0.39
+      friendly_name: Bar Light 1
+      supported_features: 40
+      state: 'on'
+    light.bar_light_2:
+      min_color_temp_kelvin: 2000
+      max_color_temp_kelvin: 6535
+      min_mireds: 153
+      max_mireds: 500
+      supported_color_modes:
+      - color_temp
+      color_mode: color_temp
+      brightness: 23
+      color_temp_kelvin: 2398
+      color_temp: 417
+      hs_color:
+      - 29.157
+      - 76.348
+      rgb_color:
+      - 255
+      - 155
+      - 60
+      xy_color:
+      - 0.557
+      - 0.39
+      friendly_name: Bar Light 2
+      supported_features: 40
+      state: 'on'
+    light.bar_light_3:
+      min_color_temp_kelvin: 2000
+      max_color_temp_kelvin: 6535
+      min_mireds: 153
+      max_mireds: 500
+      supported_color_modes:
+      - color_temp
+      color_mode: color_temp
+      brightness: 23
+      color_temp_kelvin: 2398
+      color_temp: 417
+      hs_color:
+      - 29.157
+      - 76.348
+      rgb_color:
+      - 255
+      - 155
+      - 60
+      xy_color:
+      - 0.557
+      - 0.39
+      friendly_name: Bar Light 3
+      supported_features: 40
+      state: 'on'
+    light.bar_light_4:
+      min_color_temp_kelvin: 2000
+      max_color_temp_kelvin: 6535
+      min_mireds: 153
+      max_mireds: 500
+      supported_color_modes:
+      - color_temp
+      color_mode: color_temp
+      brightness: 23
+      color_temp_kelvin: 2398
+      color_temp: 417
+      hs_color:
+      - 29.157
+      - 76.348
+      rgb_color:
+      - 255
+      - 155
+      - 60
+      xy_color:
+      - 0.557
+      - 0.39
+      friendly_name: Bar Light 4
+      supported_features: 40
+      state: 'on'
+    light.bar_light_5:
+      min_color_temp_kelvin: 2000
+      max_color_temp_kelvin: 6535
+      min_mireds: 153
+      max_mireds: 500
+      supported_color_modes:
+      - color_temp
+      color_mode: color_temp
+      brightness: 23
+      color_temp_kelvin: 2398
+      color_temp: 417
+      hs_color:
+      - 29.157
+      - 76.348
+      rgb_color:
+      - 255
+      - 155
+      - 60
+      xy_color:
+      - 0.557
+      - 0.39
+      friendly_name: Bar Light 5
+      supported_features: 40
+      state: 'on'
+  icon: mdi:lightbulb-on-10
+  metadata: {}
+- id: '1738240947548'
+  name: Bar bright
+  entities:
+    light.bar_light_1:
+      min_color_temp_kelvin: 2000
+      max_color_temp_kelvin: 6535
+      min_mireds: 153
+      max_mireds: 500
+      supported_color_modes:
+      - color_temp
+      color_mode: color_temp
+      brightness: 126
+      color_temp_kelvin: 2398
+      color_temp: 417
+      hs_color:
+      - 29.157
+      - 76.348
+      rgb_color:
+      - 255
+      - 155
+      - 60
+      xy_color:
+      - 0.557
+      - 0.39
+      friendly_name: Bar Light 1
+      supported_features: 40
+      state: 'on'
+    light.bar_light_2:
+      min_color_temp_kelvin: 2000
+      max_color_temp_kelvin: 6535
+      min_mireds: 153
+      max_mireds: 500
+      supported_color_modes:
+      - color_temp
+      color_mode: color_temp
+      brightness: 126
+      color_temp_kelvin: 2398
+      color_temp: 417
+      hs_color:
+      - 29.157
+      - 76.348
+      rgb_color:
+      - 255
+      - 155
+      - 60
+      xy_color:
+      - 0.557
+      - 0.39
+      friendly_name: Bar Light 2
+      supported_features: 40
+      state: 'on'
+    light.bar_light_3:
+      min_color_temp_kelvin: 2000
+      max_color_temp_kelvin: 6535
+      min_mireds: 153
+      max_mireds: 500
+      supported_color_modes:
+      - color_temp
+      color_mode: color_temp
+      brightness: 126
+      color_temp_kelvin: 2398
+      color_temp: 417
+      hs_color:
+      - 29.157
+      - 76.348
+      rgb_color:
+      - 255
+      - 155
+      - 60
+      xy_color:
+      - 0.557
+      - 0.39
+      friendly_name: Bar Light 3
+      supported_features: 40
+      state: 'on'
+    light.bar_light_4:
+      min_color_temp_kelvin: 2000
+      max_color_temp_kelvin: 6535
+      min_mireds: 153
+      max_mireds: 500
+      supported_color_modes:
+      - color_temp
+      color_mode: color_temp
+      brightness: 126
+      color_temp_kelvin: 2398
+      color_temp: 417
+      hs_color:
+      - 29.157
+      - 76.348
+      rgb_color:
+      - 255
+      - 155
+      - 60
+      xy_color:
+      - 0.557
+      - 0.39
+      friendly_name: Bar Light 4
+      supported_features: 40
+      state: 'on'
+    light.bar_light_5:
+      min_color_temp_kelvin: 2000
+      max_color_temp_kelvin: 6535
+      min_mireds: 153
+      max_mireds: 500
+      supported_color_modes:
+      - color_temp
+      color_mode: color_temp
+      brightness: 126
+      color_temp_kelvin: 2398
+      color_temp: 417
+      hs_color:
+      - 29.157
+      - 76.348
+      rgb_color:
+      - 255
+      - 155
+      - 60
+      xy_color:
+      - 0.557
+      - 0.39
+      friendly_name: Bar Light 5
+      supported_features: 40
+      state: 'on'
+  icon: mdi:lightbulb-on-80
+  metadata: {}
