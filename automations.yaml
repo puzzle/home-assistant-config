@@ -140,6 +140,7 @@
           - switch.screens
           - switch.shellyplus1pm_a8032abbb744_switch_0
           - switch.lampe_insel_4
+          - switch.lampe_insel_3
   mode: single
 - id: '1738242523521'
   alias: Turn stuff off in the evening
